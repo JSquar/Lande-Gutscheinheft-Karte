@@ -14,7 +14,7 @@ from geopy.geocoders import Nominatim
 
 LISTE_DATEI = Path(__file__).parent / "flugplatzliste_2026.txt"
 CACHE_DATEI = Path(__file__).parent / "geocode_cache.json"
-AUSGABE_KARTE = Path(__file__).parent / "dist" / "flugplaetze_karte.html"
+AUSGABE_KARTE = Path(__file__).parent / "dist" / "index.html"
 
 # Länderkürzel aus der Liste → Länderbezeichnung für bessere Geocoding-Ergebnisse
 LAENDER_KUERZEL = {
