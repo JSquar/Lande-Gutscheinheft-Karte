@@ -23,6 +23,43 @@ LAENDER_KUERZEL = {
     "(NED)": "Niederlande",
 }
 
+# Häufige Schreibvarianten aus der Liste -> besser geocodierbare Form
+NAMENS_KORREKTUREN = {
+    "Ringstedt": "Ringsted",
+    "Dermstorf": "Dermsdorf",
+}
+
+# Gezielt zusätzliche Suchanfragen für schwer auffindbare Plätze
+SONDER_SUCHANFRAGEN = {
+    "Rheine - Eschensdorf": [
+        "Rheine-Eschendorf, Germany",
+        "Flugplatz Rheine Eschendorf, Germany",
+    ],
+    "Ringstedt (DK)": [
+        "Ringsted Flyveplads, Denmark",
+        "Ringsted, Denmark",
+    ],
+    "Schweighofen - Wissembourg": [
+        "Aérodrome de Wissembourg, France",
+        "Schweighofen, Rheinland-Pfalz, Germany",
+    ],
+    "Sömmerda - Dermstorf": [
+        "Dermsdorf, Sömmerda, Germany",
+        "Flugplatz Sömmerda Dermsdorf, Germany",
+    ],
+    "Texel (NED)": [
+        "Texel International Airport, Netherlands",
+        "EHTX, Netherlands",
+    ],
+}
+
+
+def normalisiere_name(name: str) -> str:
+    result = name
+    for falsch, korrekt in NAMENS_KORREKTUREN.items():
+        result = result.replace(falsch, korrekt)
+    return result
+
 
 def lade_cache() -> dict:
     if CACHE_DATEI.exists():
@@ -39,22 +76,27 @@ def speichere_cache(cache: dict) -> None:
 def parse_flugplatz(zeile: str) -> tuple[str, str]:
     """Gibt (Anzeigename, Suchname) zurück."""
     name = zeile.strip()
+    name_norm = normalisiere_name(name)
     land = "Deutschland"
     for kuerzel, land_name in LAENDER_KUERZEL.items():
-        if kuerzel in name:
+        if kuerzel in name_norm:
             land = land_name
-            name_clean = name.replace(kuerzel, "").strip()
+            name_clean = name_norm.replace(kuerzel, "").strip()
             return name, f"Flugplatz {name_clean}, {land_name}"
-    return name, f"Flugplatz {name}, {land}"
+    return name, f"Flugplatz {name_norm}, {land}"
 
 
 def geocodiere(geolocator: Nominatim, cache: dict, anzeige: str, suchname: str):
     """Sucht Koordinaten, erst mit Cache, dann per API."""
-    if anzeige in cache:
+    if anzeige in cache and cache[anzeige] is not None:
         return cache[anzeige]
 
-    versuche = [
+    if anzeige in cache and cache[anzeige] is None:
+        print("(erneuter Versuch) ", end="")
+
+    versuche = SONDER_SUCHANFRAGEN.get(anzeige, []) + [
         suchname,
+        normalisiere_name(anzeige),
         anzeige,  # Fallback: Roher Name
     ]
 
@@ -91,12 +133,12 @@ def erstelle_karte(flugplaetze: list[dict]) -> None:
         tiles="OpenStreetMap",
     )
 
-    folium.TileLayer(
-        tiles="https://snapshots.openflightmaps.org/live/2205/tiles/latest/aero/mercator/{z}/{x}/{y}.png",
-        attr='© <a href="https://www.openflightmaps.org">openflightmaps</a>',
-        name="ICAO (OpenFlightMaps)",
-        max_zoom=11,
-    ).add_to(karte)
+    # folium.TileLayer(
+    #     tiles="https://snapshots.openflightmaps.org/live/2205/tiles/latest/aero/mercator/{z}/{x}/{y}.png",
+    #     attr='© <a href="https://www.openflightmaps.org">openflightmaps</a>',
+    #     name="ICAO (OpenFlightMaps)",
+    #     max_zoom=11,
+    # ).add_to(karte)
 
     folium.LayerControl().add_to(karte)
 

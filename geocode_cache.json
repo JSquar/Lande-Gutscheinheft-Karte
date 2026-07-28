@@ -304,13 +304,21 @@
     "lon": 13.1981486,
     "adresse": "Flugplatz Reinsdorf, Reinsdorf - Hohenkuhnsdorfer Weg, Reinsdorf, Niederer Fläming, Dahme/Mark, Teltow-Fläming, Brandenburg, 14913, Deutschland"
   },
-  "Rheine - Eschensdorf": null,
+  "Rheine - Eschensdorf": {
+    "lat": 52.2766898,
+    "lon": 7.4925001,
+    "adresse": "Rheine-Eschendorf, Zur Heide, Kanalhafen, Rheine, Kreis Steinfurt, Nordrhein-Westfalen, 48432, Deutschland"
+  },
   "Ried - Kirchheim": {
     "lat": 50.8506776,
     "lon": 9.5585536,
     "adresse": "Riedweg, Kirchheim, Heddersdorf, Kirchheim, Landkreis Hersfeld-Rotenburg, Hessen, 36275, Deutschland"
   },
-  "Ringstedt (DK)": null,
+  "Ringstedt (DK)": {
+    "lat": 55.4252506,
+    "lon": 11.8056405,
+    "adresse": "Ringsted Flyveplads, Haslevvej, Tudsehus, Tolstrup, Ringsted, Ringsted Kommune, Region Sjælland, 4100, Danmark"
+  },
   "Rinteln": {
     "lat": 52.1754143,
     "lon": 9.0544709,
@@ -331,8 +339,16 @@
     "lon": 13.1565882,
     "adresse": "Flugplatz Schönhagen, Zum Flugplatz, Schönhagen, Trebbin, Teltow-Fläming, Brandenburg, 14959, Deutschland"
   },
-  "Schweighofen - Wissembourg": null,
-  "Sömmerda - Dermstorf": null,
+  "Schweighofen - Wissembourg": {
+    "lat": 48.7971312,
+    "lon": 7.8126118,
+    "adresse": "Aérodrome, Rue Saint-Exupéry, Marienthal, Haguenau, Haguenau-Wissembourg, Bas-Rhin, Collectivité européenne d'Alsace, Grand Est, France métropolitaine, 67500, France"
+  },
+  "Sömmerda - Dermstorf": {
+    "lat": 51.2048525,
+    "lon": 11.1994628,
+    "adresse": "Dermsdorf, Kölleda, Landkreis Sömmerda, Thüringen, 99625, Deutschland"
+  },
   "Strausberg": {
     "lat": 52.5866911,
     "lon": 13.9156327,
@@ -343,7 +359,11 @@
     "lon": 10.7462945,
     "adresse": "Goldlauter, Suhl, Thüringen, 98528, Deutschland"
   },
-  "Texel (NED)": null,
+  "Texel (NED)": {
+    "lat": 53.1144001,
+    "lon": 4.82879,
+    "adresse": "Texel International Airport, Postweg, Zuid-Eierland, De Cocksdorp, Texel, Noord-Holland, Nederland, 1795 JL, Nederland"
+  },
   "Traben - Trarbach": {
     "lat": 49.9677882,
     "lon": 7.11167,
