@@ -1,0 +1,382 @@
+{
+  "Ailertchen": {
+    "lat": 50.5946079,
+    "lon": 7.9463507,
+    "adresse": "Flugplatz Ailertchen, Im Ölbruch, Ailertchen, Westerburg, Westerwaldkreis, Rheinland-Pfalz, 56459, Deutschland"
+  },
+  "Altena - Hegenscheid": {
+    "lat": 51.3126432,
+    "lon": 7.7031048,
+    "adresse": "Flugplatz Altena-Hegenscheid, Hegenscheider Straße, Eileringsen, Iserlohn, Märkischer Kreis, Nordrhein-Westfalen, 58644, Deutschland"
+  },
+  "Ansbach - Petersdorf": {
+    "lat": 49.3596707,
+    "lon": 10.652245,
+    "adresse": "Petersdorf, Weihenzell, Weihenzell (VGem), Landkreis Ansbach, Bayern, 91629, Deutschland"
+  },
+  "Arnsberg - Menden": {
+    "lat": 51.483891,
+    "lon": 7.8987097,
+    "adresse": "Flugplatz Arnsberg-Menden, Mittelstraße, Voßwinkel, Arnsberg, Hochsauerlandkreis, Nordrhein-Westfalen, 59757, Deutschland"
+  },
+  "Arnstadt - Alkersleben": {
+    "lat": 50.842609,
+    "lon": 11.0700606,
+    "adresse": "Verkehrslandeplatz Arnstadt - Alkersleben, Am Flugplatz, Wülfershausen, Osthausen-Wülfershausen, Riechheimer Berg, Ilm-Kreis, Thüringen, 99310, Deutschland"
+  },
+  "Auerbach": {
+    "lat": 50.4924517,
+    "lon": 12.4266725,
+    "adresse": "Auerbach/Vogtland, Vogtlandkreis, Sachsen, 08209, Deutschland"
+  },
+  "Bad Gandersheim": {
+    "lat": 51.8621118,
+    "lon": 10.022231,
+    "adresse": "Flugplatzweg, Drei Linden, Bad Gandersheim, Landkreis Northeim, Niedersachsen, 37581, Deutschland"
+  },
+  "Bad Neuenahr - Ahrweiler": {
+    "lat": 50.557055,
+    "lon": 7.1364717,
+    "adresse": "Flugplatz Bengener Heide, Im Schwertstal, Neuenahr, Bad Neuenahr-Ahrweiler, Landkreis Ahrweiler, Rheinland-Pfalz, 53474, Deutschland"
+  },
+  "Bad Neustadt an der Saale": {
+    "lat": 50.3343586,
+    "lon": 10.2232004,
+    "adresse": "Bad Neustadt an der Saale, Landkreis Rhön-Grabfeld, Bayern, Deutschland"
+  },
+  "Bad Pyrmont - Lügde": {
+    "lat": 51.9743069,
+    "lon": 9.2725047,
+    "adresse": "Bad Pyrmont, Am Güterbahnhof, Oesdorf, Löwensen, Bad Pyrmont, Lügde, Landkreis Hameln-Pyrmont, Niedersachsen, 31812, Deutschland"
+  },
+  "Bad Sobernheim": {
+    "lat": 49.860385,
+    "lon": 7.6054666,
+    "adresse": "Industriepark Pferdsfeld, Eckweiler (Wüstung), Entenpfuhl, Bad Sobernheim, Nahe-Glan, Landkreis Bad Kreuznach, Rheinland-Pfalz, 55566, Deutschland"
+  },
+  "Barssel": {
+    "lat": 53.1636985,
+    "lon": 7.796372,
+    "adresse": "Flugplatz Barßel, 47, Loher Straße, Lohe, Barßel, Landkreis Cloppenburg, Niedersachsen, 26676, Deutschland"
+  },
+  "Beilngries": {
+    "lat": 49.0211505,
+    "lon": 11.4833123,
+    "adresse": "Flugplatz Beilngries, Am Flugplatz, Beilngries, Landkreis Eichstätt, Bayern, 92339, Deutschland"
+  },
+  "Biberach": {
+    "lat": 48.1078842,
+    "lon": 9.7692208,
+    "adresse": "Landschaftspark Flugplatz / Am Weißen Bild, Biberach an der Riß, VVG der Stadt Biberach an der Riß, Landkreis Biberach, Baden-Württemberg, Deutschland"
+  },
+  "Blaubeuren": {
+    "lat": 48.4765115,
+    "lon": 9.7220946,
+    "adresse": "Modell-Flugplatz, Machtolsheimer Weg, Berghülen, Suppingen, Berghülen, VVG der Stadt Blaubeuren, Alb-Donau-Kreis, Baden-Württemberg, 89150, Deutschland"
+  },
+  "Böhlen": {
+    "lat": 51.2146442,
+    "lon": 12.3646488,
+    "adresse": "Flugplatz Böhlen, B 2, Böhlen, Landkreis Leipzig, Sachsen, 04564, Deutschland"
+  },
+  "Braunschweig - Wolfsburg": {
+    "lat": 52.31912,
+    "lon": 10.5600944,
+    "adresse": "Forschungsflughafen Braunschweig-Wolfsburg, Tiefe Straße, Wabe-Schunter-Beberbach, Braunschweig, Niedersachsen, 38110, Deutschland"
+  },
+  "Breitscheid": {
+    "lat": 50.6764435,
+    "lon": 8.1699718,
+    "adresse": "Flugplatz Breitscheid, Auf der Hub, Breitscheid, Lahn-Dill-Kreis, Hessen, 35767, Deutschland"
+  },
+  "Brilon": {
+    "lat": 51.4028248,
+    "lon": 8.6421018,
+    "adresse": "Flugplatz Brilon (Thülener Bruch), B 7, Thülen, Brilon, Hochsauerlandkreis, Nordrhein-Westfalen, 59929, Deutschland"
+  },
+  "Burg Feuerstein": {
+    "lat": 49.7857186,
+    "lon": 11.1624178,
+    "adresse": "Burg Feuerstein, FO 41, Breitenbach, Ebermannstadt, Ebermannstadt (VGem), Landkreis Forchheim, Bayern, 91320, Deutschland"
+  },
+  "Cottbus - Neuhausen": {
+    "lat": 51.6911096,
+    "lon": 14.3961817,
+    "adresse": "B97n Ortsumgehung Cottbus (3. VA), Neuhausener Radweg, Frauendorf, Neuhausen/Spree, Spree-Neiße - Sprjewja-Nysa, Brandenburg, 03058, Deutschland"
+  },
+  "Diepholz - Dümmerland": {
+    "lat": 52.5813859,
+    "lon": 8.3481867,
+    "adresse": "Flugplatz Diepholz-Dümmerland, Lehmder Damm, Barlage, Diepholz, Landkreis Diepholz, Niedersachsen, 49356, Deutschland"
+  },
+  "Dierdorf - Wienau": {
+    "lat": 50.5658416,
+    "lon": 7.6533082,
+    "adresse": "Flugplatz Dierdorf-Wienau, K 122, Wienau, Dierdorf, Landkreis Neuwied, Rheinland-Pfalz, 56269, Deutschland"
+  },
+  "Dobersberg (AT)": {
+    "lat": 48.9224276,
+    "lon": 15.2947858,
+    "adresse": "Flugplatz Dobersberg, Thayatal Bundesstraße, Katastralgemeinde Dobersberg, Tiefenbach, Dobersberg, Bezirk Waidhofen an der Thaya, Niederösterreich, 3851, Österreich"
+  },
+  "Donzdorf": {
+    "lat": 48.6779607,
+    "lon": 9.8462121,
+    "adresse": "Flugplatz Donzdorf-Messelberg, K 1401, Schnittlingen, Donzdorf, GVV Mittleres Fils-Lautertal, Landkreis Göppingen, Baden-Württemberg, 73072, Deutschland"
+  },
+  "Eberswalde - Finow": {
+    "lat": 52.8301312,
+    "lon": 13.7183212,
+    "adresse": "Am Flugplatz, Finow, Eberswalde, Barnim, Brandenburg, 16227, Deutschland"
+  },
+  "Elz": {
+    "lat": 50.4270361,
+    "lon": 8.0117453,
+    "adresse": "Flugplatz Elz, Sandweg, Gewerbegebiet Sandweg, Elz, Landkreis Limburg-Weilburg, Hessen, 65604, Deutschland"
+  },
+  "Feldkirchen": {
+    "lat": 46.7284183,
+    "lon": 14.0906473,
+    "adresse": "Bezirk Feldkirchen, Kärnten, Österreich"
+  },
+  "Flensburg": {
+    "lat": 54.7717459,
+    "lon": 9.3799646,
+    "adresse": "Flugplatz Flensburg-Schäferhaus, Lecker Chaussee, Schäferhaus, Weiche, Flensburg, Schleswig-Holstein, 24941, Deutschland"
+  },
+  "Friesach Hirt (AT)": {
+    "lat": 46.9278084,
+    "lon": 14.4313653,
+    "adresse": "Flugplatz Friesach - Hirt, Micheldorf, Ostrog, Micheldorf, Bezirk St. Veit an der Glan, Kärnten, 9322, Österreich"
+  },
+  "Greiz -  Obergrochlitz": {
+    "lat": 50.6438899,
+    "lon": 12.1751158,
+    "adresse": "Heinz-Peinl-Flugplatz Greiz-Obergrochlitz, Schluchter, Obergrochlitz, Obergrochlitz / Caselwitz, Untergrochlitz, Greiz, Thüringen, 07973, Deutschland"
+  },
+  "Gunzenhausen": {
+    "lat": 49.1161362,
+    "lon": 10.7406852,
+    "adresse": "Gunzenhausen, Landkreis Weißenburg-Gunzenhausen, Bayern, 91710, Deutschland"
+  },
+  "Heide - Büsum": {
+    "lat": 54.1531505,
+    "lon": 8.9018121,
+    "adresse": "Flugplatz Heide-Büsum, Osterhof, Oesterdeichstrich, Büsum-Wesselburen, Kreis Dithmarschen, Schleswig-Holstein, 25761, Deutschland"
+  },
+  "Hodenhagen": {
+    "lat": 52.763961,
+    "lon": 9.6138403,
+    "adresse": "Flugplatz Hodenhagen, Zeppelinstraße, Hudemühlen, Hodenhagen, Samtgemeinde Ahlden, Heidekreis, Niedersachsen, 29693, Deutschland"
+  },
+  "Hoppstädten - Weiersbach": {
+    "lat": 49.6108668,
+    "lon": 7.1864828,
+    "adresse": "Flugplatz Hoppstädten-Weiersbach, Im Schlimm, Hoppstädten, Hoppstädten-Weiersbach, Birkenfeld, Landkreis Birkenfeld, Rheinland-Pfalz, 55768, Deutschland"
+  },
+  "Höxter - Holzminden": {
+    "lat": 51.807428,
+    "lon": 9.3785809,
+    "adresse": "Flugplatz Höxter-Holzminden, Schrotweg, Brenkhausen, Höxter, Kreis Höxter, Nordrhein-Westfalen, 37671, Deutschland"
+  },
+  "Illertissen": {
+    "lat": 48.2349392,
+    "lon": 10.1357811,
+    "adresse": "Flugplatz Illertissen, Jungviehweide, Tiefenbach, Illertissen, Landkreis Neu-Ulm, Bayern, 89257, Deutschland"
+  },
+  "Jena - Schöngleina": {
+    "lat": 50.9154336,
+    "lon": 11.7132861,
+    "adresse": "Flugplatz Jena-Schöngleina, 1, Flugplatz, Zinna, Schöngleina, Bad Klosterlausnitz, Saale-Holzland-Kreis, Thüringen, 07646, Deutschland"
+  },
+  "Kamp - Lintfort": {
+    "lat": 51.5294736,
+    "lon": 6.5375815,
+    "adresse": "Flugplatz Kamp-Lintfort, Alpener Straße, Saalhoff, Kamp-Lintfort, Kreis Wesel, Nordrhein-Westfalen, 47475, Deutschland"
+  },
+  "Karlshöfen": {
+    "lat": 53.3480352,
+    "lon": 9.0224229,
+    "adresse": "Zum Flugplatz, Karlshöfen, Gnarrenburg, Landkreis Rotenburg (Wümme), Niedersachsen, 27442, Deutschland"
+  },
+  "Kulmbach": {
+    "lat": 50.1345737,
+    "lon": 11.4583287,
+    "adresse": "Flugplatz Kulmbach, Trail zum Parkplatz, Oberpurbach, Kulmbach, Landkreis Kulmbach, Bayern, 95326, Deutschland"
+  },
+  "Kyritz": {
+    "lat": 52.9163257,
+    "lon": 12.4324476,
+    "adresse": "Flugplatz, Heinrichsfelde, Kyritz, Ostprignitz-Ruppin, Brandenburg, 16866, Deutschland"
+  },
+  "Leer - Papenburg": {
+    "lat": 53.2718793,
+    "lon": 7.44332,
+    "adresse": "Flugplatz Leer-Papenburg, 83, Kloster-Thedinga-Straße, Eisinghausen, Nüttermoor, Leer (Ostfriesland), Landkreis Leer, Niedersachsen, 26789, Deutschland"
+  },
+  "Loemühle": {
+    "lat": 51.6475078,
+    "lon": 7.1592236,
+    "adresse": "Flugplatz Loemühle, 301, Hülsstraße, Hüls-Süd, Marl, Kreis Recklinghausen, Nordrhein-Westfalen, 45770, Deutschland"
+  },
+  "Mannheim": {
+    "lat": 49.4892913,
+    "lon": 8.4673098,
+    "adresse": "Mannheim, Baden-Württemberg, Deutschland"
+  },
+  "Marburg - Schönstadt": {
+    "lat": 50.8796754,
+    "lon": 8.8185868,
+    "adresse": "Zum Flugplatz, Schönstadt, Cölbe, Landkreis Marburg-Biedenkopf, Hessen, 35091, Deutschland"
+  },
+  "Meinerzhagen": {
+    "lat": 51.0998422,
+    "lon": 7.6035554,
+    "adresse": "Flugplatz Meinerzhagen, Marienheider Straße, Marienheide, Beutringhausen, Genkel, Meinerzhagen, Märkischer Kreis, Nordrhein-Westfalen, 58540, Deutschland"
+  },
+  "Müritz Airpark": {
+    "lat": 53.3049876,
+    "lon": 12.7407679,
+    "adresse": "Müritz Airpark, Albert Hofmann Ring, Lärz, Röbel-Müritz, Mecklenburgische Seenplatte, Mecklenburg-Vorpommern, 17248, Deutschland"
+  },
+  "Neumünster": {
+    "lat": 54.0780031,
+    "lon": 9.939063,
+    "adresse": "Flugplatz Neumünster, Dreschflegel, Böcklersiedlung, Böcklersiedlung/Bugenhagen, Neumünster, Schleswig-Holstein, 24537, Deutschland"
+  },
+  "Niederöblarn": {
+    "lat": 47.4781279,
+    "lon": 14.0060927,
+    "adresse": "Niederöblarn, Öblarnerstraße, Moosberg, Niederöblarn, Öblarn, Politische Expositur Gröbming, Bezirk Liezen, Steiermark, 8960, Österreich"
+  },
+  "Niederstetten": {
+    "lat": 49.4003232,
+    "lon": 9.9189607,
+    "adresse": "Niederstetten, Main-Tauber-Kreis, Baden-Württemberg, 97996, Deutschland"
+  },
+  "Nittenau - Bruck": {
+    "lat": 49.2221592,
+    "lon": 12.2965192,
+    "adresse": "Flugplatz Nittenau-Bruck, Sulzmühl, Waltenried, Sulzmühl, Nittenau, Landkreis Schwandorf, Bayern, 93149, Deutschland"
+  },
+  "Nordholz - Spieka": {
+    "lat": 53.7683587,
+    "lon": 8.6417925,
+    "adresse": "Flugplatz Nordholz-Spieka, 1, Flying Otto Weg, Nordholz, Wurster Nordseeküste, Landkreis Cuxhaven, Niedersachsen, 27639, Deutschland"
+  },
+  "Oldenburg - Hatten": {
+    "lat": 53.0685819,
+    "lon": 8.3130527,
+    "adresse": "Flugplatz Oldenburg-Hatten, Hatter Landstraße, Sandtange, Hatten, Landkreis Oldenburg, Niedersachsen, 26209, Deutschland"
+  },
+  "Oppenheim": {
+    "lat": 49.8413549,
+    "lon": 8.3765091,
+    "adresse": "Flugplatz Oppenheim, An den langen Äckern, Krämereck Ost, Oppenheim-Süd, Oppenheim, Rhein-Selz, Landkreis Mainz-Bingen, Rheinland-Pfalz, 55276, Deutschland"
+  },
+  "Pasewalk - Franzfelde": {
+    "lat": 53.5069733,
+    "lon": 13.9487319,
+    "adresse": "Flugplatz Pasewalk, 29, Franzfelde, Pasewalk, Vorpommern-Greifswald, Mecklenburg-Vorpommern, 17309, Deutschland"
+  },
+  "Pegnitz - Zipser Berg": {
+    "lat": 49.7622365,
+    "lon": 11.5728192,
+    "adresse": "Flugplatz Pegnitz-Zipser Berg, St 2403, Weidmannshöhe, Neuhof, Pegnitz, Landkreis Bayreuth, Bayern, 91257, Deutschland"
+  },
+  "Pfullendorf": {
+    "lat": 47.9122612,
+    "lon": 9.2511854,
+    "adresse": "Turm Flugplatz Pfullendorf [C], K 8269, Aftholderberg, Egg, Pfullendorf-Stadt, Aftholderberg, Pfullendorf, VVG der Stadt Pfullendorf, Landkreis Sigmaringen, Baden-Württemberg, 88634, Deutschland"
+  },
+  "Randers (DK)": {
+    "lat": 56.4355428,
+    "lon": 10.0425957,
+    "adresse": "Randers SV, Randers, Randers Kommune, Region Midtjylland, 8940, Danmark"
+  },
+  "Regensburg - Oberhub": {
+    "lat": 49.1418865,
+    "lon": 12.0824955,
+    "adresse": "Flugplatz Regensburg-Oberhub, 12, Oberhub, Eichelberg, Regenstauf, Landkreis Regensburg, Bayern, 93128, Deutschland"
+  },
+  "Reinsdorf": {
+    "lat": 51.9004502,
+    "lon": 13.1981486,
+    "adresse": "Flugplatz Reinsdorf, Reinsdorf - Hohenkuhnsdorfer Weg, Reinsdorf, Niederer Fläming, Dahme/Mark, Teltow-Fläming, Brandenburg, 14913, Deutschland"
+  },
+  "Rheine - Eschensdorf": null,
+  "Ried - Kirchheim": {
+    "lat": 50.8506776,
+    "lon": 9.5585536,
+    "adresse": "Riedweg, Kirchheim, Heddersdorf, Kirchheim, Landkreis Hersfeld-Rotenburg, Hessen, 36275, Deutschland"
+  },
+  "Ringstedt (DK)": null,
+  "Rinteln": {
+    "lat": 52.1754143,
+    "lon": 9.0544709,
+    "adresse": "Flugplatz Rinteln, Zum Flugplatz, Industriegebiet Rinteln-Süd, Rinteln, Landkreis Schaumburg, Niedersachsen, 31737, Deutschland"
+  },
+  "Rotenburg - Wümme": {
+    "lat": 53.129717,
+    "lon": 9.3513785,
+    "adresse": "Flugplatz Rotenburg, Zum Flugplatz, Domäne Luhne, Rotenburg, Landkreis Rotenburg (Wümme), Niedersachsen, 27356, Deutschland"
+  },
+  "Schleswig - Kropp": {
+    "lat": 54.4254149,
+    "lon": 9.5419074,
+    "adresse": "Flugplatz Schleswig-Kropp, Hochmoor, Kropp, Kropp-Stapelholm, Kreis Schleswig-Flensburg, Schleswig-Holstein, 24848, Deutschland"
+  },
+  "Schönhagen": {
+    "lat": 52.2061059,
+    "lon": 13.1565882,
+    "adresse": "Flugplatz Schönhagen, Zum Flugplatz, Schönhagen, Trebbin, Teltow-Fläming, Brandenburg, 14959, Deutschland"
+  },
+  "Schweighofen - Wissembourg": null,
+  "Sömmerda - Dermstorf": null,
+  "Strausberg": {
+    "lat": 52.5866911,
+    "lon": 13.9156327,
+    "adresse": "Jabiru Motors Deutschland GmbH, 10, Flugplatzstraße F2, Gewerbegebiet Strausberg, Strausberg Nord, Strausberg, Märkisch-Oderland, Brandenburg, 15344, Deutschland"
+  },
+  "Suhl Goldlauter": {
+    "lat": 50.6301639,
+    "lon": 10.7462945,
+    "adresse": "Goldlauter, Suhl, Thüringen, 98528, Deutschland"
+  },
+  "Texel (NED)": null,
+  "Traben - Trarbach": {
+    "lat": 49.9677882,
+    "lon": 7.11167,
+    "adresse": "Flugplatz Traben-Trarbach / Mont Royal, K 64, Rißbach, Traben, Wolf, Traben-Trarbach, Landkreis Bernkastel-Wittlich, Rheinland-Pfalz, 56841, Deutschland"
+  },
+  "Treuchtlingen - Bubenheim": {
+    "lat": 48.9912773,
+    "lon": 10.8916754,
+    "adresse": "Bubenheim, Treuchtlingen, Landkreis Weißenburg-Gunzenhausen, Bayern, 91757, Deutschland"
+  },
+  "Uelzen": {
+    "lat": 52.9834312,
+    "lon": 10.4657103,
+    "adresse": "Flugplatz Uelzen, Stadtweg, Bohlsen, Gerdau, Samtgemeinde Suderburg, Landkreis Uelzen, Niedersachsen, 29581, Deutschland"
+  },
+  "Welzow": {
+    "lat": 51.5755577,
+    "lon": 14.1369438,
+    "adresse": "Flugplatz Spremberg-Welzow, Lindenfeld, Bahnsdorf, Neu-Seeland, Bahnsdorf - Bobošojce, Altdöbern, Oberspreewald-Lausitz - Górne Błota-Łužyca, Brandenburg, 03103, Deutschland"
+  },
+  "Weser - Wümme": {
+    "lat": 53.0539709,
+    "lon": 9.2086875,
+    "adresse": "Weser-Wümme, 4, Stelle, Hellwege, Samtgemeinde Sottrum, Landkreis Rotenburg (Wümme), Niedersachsen, 27367, Deutschland"
+  },
+  "Wiener - Neustadt Ost (AT)": {
+    "lat": 47.8437044,
+    "lon": 16.2596186,
+    "adresse": "Flugplatz Wiener Neustadt Ost, B21b, Katastralgemeinde Theresienfeld, Theresienfeld, Bezirk Wiener Neustadt, Niederösterreich, 2604, Österreich"
+  },
+  "Zwickau": {
+    "lat": 50.7011414,
+    "lon": 12.4530211,
+    "adresse": "Flugplatz Zwickau, Allendestraße, Neuplanitz, Zwickau-Süd, Zwickau, Langenweißbach, Zwickau, Sachsen, 08134, Deutschland"
+  }
+}
