@@ -1,0 +1,3741 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6be119e528c962160707b1ca6ca1ce61 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6be119e528c962160707b1ca6ca1ce61" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6be119e528c962160707b1ca6ca1ce61 = L.map(
+                "map_6be119e528c962160707b1ca6ca1ce61",
+                {
+                    center: [51.04627552133333, 10.343562898666667],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5b6ec2fc7aa3b3f6069ffebe1f529349 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5b6ec2fc7aa3b3f6069ffebe1f529349.addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var tile_layer_5ad9aa76b6eab53f1c0543a52ab33c11 = L.tileLayer(
+                "https://snapshots.openflightmaps.org/live/2205/tiles/latest/aero/mercator/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 11,
+  "maxNativeZoom": 11,
+  "noWrap": false,
+  "attribution": "\u00a9 \u003ca href=\"https://www.openflightmaps.org\"\u003eopenflightmaps\u003c/a\u003e",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5ad9aa76b6eab53f1c0543a52ab33c11.addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var layer_control_8c8539aa3426ad17b381b96260f29ac9_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_5b6ec2fc7aa3b3f6069ffebe1f529349,
+                    "ICAO (OpenFlightMaps)" : tile_layer_5ad9aa76b6eab53f1c0543a52ab33c11,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_8c8539aa3426ad17b381b96260f29ac9 = L.control.layers(
+                layer_control_8c8539aa3426ad17b381b96260f29ac9_layers.base_layers,
+                layer_control_8c8539aa3426ad17b381b96260f29ac9_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+
+        
+    
+            var marker_ed98c13bc17f8c8c58769b6c57f9f9dd = L.marker(
+                [50.5946079, 7.9463507],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_9fd59685d623f5ee5db6bd785310a32a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_903f5ae7a9f23e61a589a20bbc0b136e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7fb339a0676a382487331f7d0060bb75 = $(`<div id="html_7fb339a0676a382487331f7d0060bb75" style="width: 100.0%; height: 100.0%;"><b>Ailertchen</b><br><small>Flugplatz Ailertchen, Im Ölbruch, Ailertchen, Westerburg, Westerwaldkreis, Rheinland-Pfalz, 56459, Deutschland</small></div>`)[0];
+                popup_903f5ae7a9f23e61a589a20bbc0b136e.setContent(html_7fb339a0676a382487331f7d0060bb75);
+            
+        
+
+        marker_ed98c13bc17f8c8c58769b6c57f9f9dd.bindPopup(popup_903f5ae7a9f23e61a589a20bbc0b136e)
+        ;
+
+        
+    
+    
+            marker_ed98c13bc17f8c8c58769b6c57f9f9dd.bindTooltip(
+                `<div>
+                     Ailertchen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ed98c13bc17f8c8c58769b6c57f9f9dd.setIcon(icon_9fd59685d623f5ee5db6bd785310a32a);
+            
+    
+            var marker_d2f68a3e42705fcba822b571d3e7575b = L.marker(
+                [51.3126432, 7.7031048],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_e7e89dfd0dc48dfa9f3b3dd3dc056d1d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b0768ba71e3ecf1e7e661e89290025a1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_95fee0941bea0e135b944bb9a01dba5a = $(`<div id="html_95fee0941bea0e135b944bb9a01dba5a" style="width: 100.0%; height: 100.0%;"><b>Altena - Hegenscheid</b><br><small>Flugplatz Altena-Hegenscheid, Hegenscheider Straße, Eileringsen, Iserlohn, Märkischer Kreis, Nordrhein-Westfalen, 58644, Deutschland</small></div>`)[0];
+                popup_b0768ba71e3ecf1e7e661e89290025a1.setContent(html_95fee0941bea0e135b944bb9a01dba5a);
+            
+        
+
+        marker_d2f68a3e42705fcba822b571d3e7575b.bindPopup(popup_b0768ba71e3ecf1e7e661e89290025a1)
+        ;
+
+        
+    
+    
+            marker_d2f68a3e42705fcba822b571d3e7575b.bindTooltip(
+                `<div>
+                     Altena - Hegenscheid
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d2f68a3e42705fcba822b571d3e7575b.setIcon(icon_e7e89dfd0dc48dfa9f3b3dd3dc056d1d);
+            
+    
+            var marker_085fe1631b3144ac81750a0ac0800ab3 = L.marker(
+                [49.3596707, 10.652245],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_f77854489fedabff49c3c372f0e89994 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b09325456022a04802e6d72f3d15fdb1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a4002fa72a9e6fa64959edbe07053fad = $(`<div id="html_a4002fa72a9e6fa64959edbe07053fad" style="width: 100.0%; height: 100.0%;"><b>Ansbach - Petersdorf</b><br><small>Petersdorf, Weihenzell, Weihenzell (VGem), Landkreis Ansbach, Bayern, 91629, Deutschland</small></div>`)[0];
+                popup_b09325456022a04802e6d72f3d15fdb1.setContent(html_a4002fa72a9e6fa64959edbe07053fad);
+            
+        
+
+        marker_085fe1631b3144ac81750a0ac0800ab3.bindPopup(popup_b09325456022a04802e6d72f3d15fdb1)
+        ;
+
+        
+    
+    
+            marker_085fe1631b3144ac81750a0ac0800ab3.bindTooltip(
+                `<div>
+                     Ansbach - Petersdorf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_085fe1631b3144ac81750a0ac0800ab3.setIcon(icon_f77854489fedabff49c3c372f0e89994);
+            
+    
+            var marker_3763f9320210fb1afcf93000bf26d5e7 = L.marker(
+                [51.483891, 7.8987097],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_40a4225693e172132187fc783a0e4a64 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a1c5832eae1c1204831746e64877e407 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_71c1dc58474061a1c1e8b233965a4f6b = $(`<div id="html_71c1dc58474061a1c1e8b233965a4f6b" style="width: 100.0%; height: 100.0%;"><b>Arnsberg - Menden</b><br><small>Flugplatz Arnsberg-Menden, Mittelstraße, Voßwinkel, Arnsberg, Hochsauerlandkreis, Nordrhein-Westfalen, 59757, Deutschland</small></div>`)[0];
+                popup_a1c5832eae1c1204831746e64877e407.setContent(html_71c1dc58474061a1c1e8b233965a4f6b);
+            
+        
+
+        marker_3763f9320210fb1afcf93000bf26d5e7.bindPopup(popup_a1c5832eae1c1204831746e64877e407)
+        ;
+
+        
+    
+    
+            marker_3763f9320210fb1afcf93000bf26d5e7.bindTooltip(
+                `<div>
+                     Arnsberg - Menden
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3763f9320210fb1afcf93000bf26d5e7.setIcon(icon_40a4225693e172132187fc783a0e4a64);
+            
+    
+            var marker_c23a0786523d3713643a10ac511ffd46 = L.marker(
+                [50.842609, 11.0700606],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_02c23dd9847daf23a388be8919d4fbe2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c691b6378a436f332130446208901fb7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_45203d7780c372c9a7cd5fb47644e4b3 = $(`<div id="html_45203d7780c372c9a7cd5fb47644e4b3" style="width: 100.0%; height: 100.0%;"><b>Arnstadt - Alkersleben</b><br><small>Verkehrslandeplatz Arnstadt - Alkersleben, Am Flugplatz, Wülfershausen, Osthausen-Wülfershausen, Riechheimer Berg, Ilm-Kreis, Thüringen, 99310, Deutschland</small></div>`)[0];
+                popup_c691b6378a436f332130446208901fb7.setContent(html_45203d7780c372c9a7cd5fb47644e4b3);
+            
+        
+
+        marker_c23a0786523d3713643a10ac511ffd46.bindPopup(popup_c691b6378a436f332130446208901fb7)
+        ;
+
+        
+    
+    
+            marker_c23a0786523d3713643a10ac511ffd46.bindTooltip(
+                `<div>
+                     Arnstadt - Alkersleben
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c23a0786523d3713643a10ac511ffd46.setIcon(icon_02c23dd9847daf23a388be8919d4fbe2);
+            
+    
+            var marker_581fa6bc77361c508d35f6e9d21f609c = L.marker(
+                [50.4924517, 12.4266725],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_f22ea411365a659d871f4859b72886a7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e03c00bc18700ba7f45b0e85343cf513 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ac77104eaf4bf7ff537369033a1fad5 = $(`<div id="html_5ac77104eaf4bf7ff537369033a1fad5" style="width: 100.0%; height: 100.0%;"><b>Auerbach</b><br><small>Auerbach/Vogtland, Vogtlandkreis, Sachsen, 08209, Deutschland</small></div>`)[0];
+                popup_e03c00bc18700ba7f45b0e85343cf513.setContent(html_5ac77104eaf4bf7ff537369033a1fad5);
+            
+        
+
+        marker_581fa6bc77361c508d35f6e9d21f609c.bindPopup(popup_e03c00bc18700ba7f45b0e85343cf513)
+        ;
+
+        
+    
+    
+            marker_581fa6bc77361c508d35f6e9d21f609c.bindTooltip(
+                `<div>
+                     Auerbach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_581fa6bc77361c508d35f6e9d21f609c.setIcon(icon_f22ea411365a659d871f4859b72886a7);
+            
+    
+            var marker_86a4363136ca64f108b610cc0481ece8 = L.marker(
+                [51.8621118, 10.022231],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_63edc2dadaa1e6f6b7b38d99e7984a75 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a988da275b53923fab45ba5a855cef3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5116305658bba6c80969642fd44b35f0 = $(`<div id="html_5116305658bba6c80969642fd44b35f0" style="width: 100.0%; height: 100.0%;"><b>Bad Gandersheim</b><br><small>Flugplatzweg, Drei Linden, Bad Gandersheim, Landkreis Northeim, Niedersachsen, 37581, Deutschland</small></div>`)[0];
+                popup_3a988da275b53923fab45ba5a855cef3.setContent(html_5116305658bba6c80969642fd44b35f0);
+            
+        
+
+        marker_86a4363136ca64f108b610cc0481ece8.bindPopup(popup_3a988da275b53923fab45ba5a855cef3)
+        ;
+
+        
+    
+    
+            marker_86a4363136ca64f108b610cc0481ece8.bindTooltip(
+                `<div>
+                     Bad Gandersheim
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_86a4363136ca64f108b610cc0481ece8.setIcon(icon_63edc2dadaa1e6f6b7b38d99e7984a75);
+            
+    
+            var marker_3340d3980682acbc4d475d632bb383ea = L.marker(
+                [50.557055, 7.1364717],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_f631a539951d8b501d524d3e18096237 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa44db7ec2ed7af8e6a1154302127830 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6ecc4ce789d59b69e2286bd5c08dfb18 = $(`<div id="html_6ecc4ce789d59b69e2286bd5c08dfb18" style="width: 100.0%; height: 100.0%;"><b>Bad Neuenahr - Ahrweiler</b><br><small>Flugplatz Bengener Heide, Im Schwertstal, Neuenahr, Bad Neuenahr-Ahrweiler, Landkreis Ahrweiler, Rheinland-Pfalz, 53474, Deutschland</small></div>`)[0];
+                popup_fa44db7ec2ed7af8e6a1154302127830.setContent(html_6ecc4ce789d59b69e2286bd5c08dfb18);
+            
+        
+
+        marker_3340d3980682acbc4d475d632bb383ea.bindPopup(popup_fa44db7ec2ed7af8e6a1154302127830)
+        ;
+
+        
+    
+    
+            marker_3340d3980682acbc4d475d632bb383ea.bindTooltip(
+                `<div>
+                     Bad Neuenahr - Ahrweiler
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3340d3980682acbc4d475d632bb383ea.setIcon(icon_f631a539951d8b501d524d3e18096237);
+            
+    
+            var marker_23be89fa76d7854afc9babc440ce2f9c = L.marker(
+                [50.3343586, 10.2232004],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_0a0aa8f2050ee8883c2ea0f273bbe84e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a58aa946430b7a952ad469e0d40c3591 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_599ba50e4fd1247e578f9cee98888a62 = $(`<div id="html_599ba50e4fd1247e578f9cee98888a62" style="width: 100.0%; height: 100.0%;"><b>Bad Neustadt an der Saale</b><br><small>Bad Neustadt an der Saale, Landkreis Rhön-Grabfeld, Bayern, Deutschland</small></div>`)[0];
+                popup_a58aa946430b7a952ad469e0d40c3591.setContent(html_599ba50e4fd1247e578f9cee98888a62);
+            
+        
+
+        marker_23be89fa76d7854afc9babc440ce2f9c.bindPopup(popup_a58aa946430b7a952ad469e0d40c3591)
+        ;
+
+        
+    
+    
+            marker_23be89fa76d7854afc9babc440ce2f9c.bindTooltip(
+                `<div>
+                     Bad Neustadt an der Saale
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_23be89fa76d7854afc9babc440ce2f9c.setIcon(icon_0a0aa8f2050ee8883c2ea0f273bbe84e);
+            
+    
+            var marker_71c64e7f2bd3f580c4ee87ff6463ae3e = L.marker(
+                [51.9743069, 9.2725047],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_b843e9a24823ff3068d53ae489e48d0b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_be2c1d348d976047c0baca5dc7283f6f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1b3f0c69888b1434b32aef943eb02c60 = $(`<div id="html_1b3f0c69888b1434b32aef943eb02c60" style="width: 100.0%; height: 100.0%;"><b>Bad Pyrmont - Lügde</b><br><small>Bad Pyrmont, Am Güterbahnhof, Oesdorf, Löwensen, Bad Pyrmont, Lügde, Landkreis Hameln-Pyrmont, Niedersachsen, 31812, Deutschland</small></div>`)[0];
+                popup_be2c1d348d976047c0baca5dc7283f6f.setContent(html_1b3f0c69888b1434b32aef943eb02c60);
+            
+        
+
+        marker_71c64e7f2bd3f580c4ee87ff6463ae3e.bindPopup(popup_be2c1d348d976047c0baca5dc7283f6f)
+        ;
+
+        
+    
+    
+            marker_71c64e7f2bd3f580c4ee87ff6463ae3e.bindTooltip(
+                `<div>
+                     Bad Pyrmont - Lügde
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_71c64e7f2bd3f580c4ee87ff6463ae3e.setIcon(icon_b843e9a24823ff3068d53ae489e48d0b);
+            
+    
+            var marker_5e91fee6350214b6cbf6afa60457ff76 = L.marker(
+                [49.860385, 7.6054666],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_be00db0d386e073a9ae1a4e98dde8cac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_49fa947fbbda1895ec1d27008b67da64 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cf4e0141df9abf4de25b9bced8dd3e17 = $(`<div id="html_cf4e0141df9abf4de25b9bced8dd3e17" style="width: 100.0%; height: 100.0%;"><b>Bad Sobernheim</b><br><small>Industriepark Pferdsfeld, Eckweiler (Wüstung), Entenpfuhl, Bad Sobernheim, Nahe-Glan, Landkreis Bad Kreuznach, Rheinland-Pfalz, 55566, Deutschland</small></div>`)[0];
+                popup_49fa947fbbda1895ec1d27008b67da64.setContent(html_cf4e0141df9abf4de25b9bced8dd3e17);
+            
+        
+
+        marker_5e91fee6350214b6cbf6afa60457ff76.bindPopup(popup_49fa947fbbda1895ec1d27008b67da64)
+        ;
+
+        
+    
+    
+            marker_5e91fee6350214b6cbf6afa60457ff76.bindTooltip(
+                `<div>
+                     Bad Sobernheim
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5e91fee6350214b6cbf6afa60457ff76.setIcon(icon_be00db0d386e073a9ae1a4e98dde8cac);
+            
+    
+            var marker_81f26148d640caffac15f1ea258c0753 = L.marker(
+                [53.1636985, 7.796372],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_76d64819a5f37e556f06bf781ca2ae28 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a341cce24370b010a638da5c830b882c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b36d5bf3d2ea5d06c01aaa50feacbe23 = $(`<div id="html_b36d5bf3d2ea5d06c01aaa50feacbe23" style="width: 100.0%; height: 100.0%;"><b>Barssel</b><br><small>Flugplatz Barßel, 47, Loher Straße, Lohe, Barßel, Landkreis Cloppenburg, Niedersachsen, 26676, Deutschland</small></div>`)[0];
+                popup_a341cce24370b010a638da5c830b882c.setContent(html_b36d5bf3d2ea5d06c01aaa50feacbe23);
+            
+        
+
+        marker_81f26148d640caffac15f1ea258c0753.bindPopup(popup_a341cce24370b010a638da5c830b882c)
+        ;
+
+        
+    
+    
+            marker_81f26148d640caffac15f1ea258c0753.bindTooltip(
+                `<div>
+                     Barssel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_81f26148d640caffac15f1ea258c0753.setIcon(icon_76d64819a5f37e556f06bf781ca2ae28);
+            
+    
+            var marker_197f11b649f55ae99ef913890869f82f = L.marker(
+                [49.0211505, 11.4833123],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_a6a3fb0e316f6127f97467a8c9358067 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0347e1af027f4dbf6aa2afb1ab8503bf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e118ce6972b4e0ca51fe79f7158383bd = $(`<div id="html_e118ce6972b4e0ca51fe79f7158383bd" style="width: 100.0%; height: 100.0%;"><b>Beilngries</b><br><small>Flugplatz Beilngries, Am Flugplatz, Beilngries, Landkreis Eichstätt, Bayern, 92339, Deutschland</small></div>`)[0];
+                popup_0347e1af027f4dbf6aa2afb1ab8503bf.setContent(html_e118ce6972b4e0ca51fe79f7158383bd);
+            
+        
+
+        marker_197f11b649f55ae99ef913890869f82f.bindPopup(popup_0347e1af027f4dbf6aa2afb1ab8503bf)
+        ;
+
+        
+    
+    
+            marker_197f11b649f55ae99ef913890869f82f.bindTooltip(
+                `<div>
+                     Beilngries
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_197f11b649f55ae99ef913890869f82f.setIcon(icon_a6a3fb0e316f6127f97467a8c9358067);
+            
+    
+            var marker_158d80c0421dafca58d9fcd8f00620cb = L.marker(
+                [48.1078842, 9.7692208],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_b852cbe700b90d6db8bfcf7d37b8e2e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2d6c28fa1059edb37833aa7c57ba1f94 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cf2436fee31739be8bd3bff47e5b5a70 = $(`<div id="html_cf2436fee31739be8bd3bff47e5b5a70" style="width: 100.0%; height: 100.0%;"><b>Biberach</b><br><small>Landschaftspark Flugplatz / Am Weißen Bild, Biberach an der Riß, VVG der Stadt Biberach an der Riß, Landkreis Biberach, Baden-Württemberg, Deutschland</small></div>`)[0];
+                popup_2d6c28fa1059edb37833aa7c57ba1f94.setContent(html_cf2436fee31739be8bd3bff47e5b5a70);
+            
+        
+
+        marker_158d80c0421dafca58d9fcd8f00620cb.bindPopup(popup_2d6c28fa1059edb37833aa7c57ba1f94)
+        ;
+
+        
+    
+    
+            marker_158d80c0421dafca58d9fcd8f00620cb.bindTooltip(
+                `<div>
+                     Biberach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_158d80c0421dafca58d9fcd8f00620cb.setIcon(icon_b852cbe700b90d6db8bfcf7d37b8e2e9);
+            
+    
+            var marker_dd91ea91ee36d5f57909866e81b176a5 = L.marker(
+                [48.4765115, 9.7220946],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_1b1daa9d80d79771129b64ef399ac0b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a094d327dac8587a82229cf07798a55 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_55844dccaf2bdb65fea68991aa4cc401 = $(`<div id="html_55844dccaf2bdb65fea68991aa4cc401" style="width: 100.0%; height: 100.0%;"><b>Blaubeuren</b><br><small>Modell-Flugplatz, Machtolsheimer Weg, Berghülen, Suppingen, Berghülen, VVG der Stadt Blaubeuren, Alb-Donau-Kreis, Baden-Württemberg, 89150, Deutschland</small></div>`)[0];
+                popup_3a094d327dac8587a82229cf07798a55.setContent(html_55844dccaf2bdb65fea68991aa4cc401);
+            
+        
+
+        marker_dd91ea91ee36d5f57909866e81b176a5.bindPopup(popup_3a094d327dac8587a82229cf07798a55)
+        ;
+
+        
+    
+    
+            marker_dd91ea91ee36d5f57909866e81b176a5.bindTooltip(
+                `<div>
+                     Blaubeuren
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dd91ea91ee36d5f57909866e81b176a5.setIcon(icon_1b1daa9d80d79771129b64ef399ac0b1);
+            
+    
+            var marker_b11d11498fff90183087c248db34be65 = L.marker(
+                [51.2146442, 12.3646488],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_cc85369dcb57e6bd8d20bf127bf96470 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2b57b6dab54d5131dd2d44500f6984c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e827735465a9ac7fe199bad5412a5c5d = $(`<div id="html_e827735465a9ac7fe199bad5412a5c5d" style="width: 100.0%; height: 100.0%;"><b>Böhlen</b><br><small>Flugplatz Böhlen, B 2, Böhlen, Landkreis Leipzig, Sachsen, 04564, Deutschland</small></div>`)[0];
+                popup_c2b57b6dab54d5131dd2d44500f6984c.setContent(html_e827735465a9ac7fe199bad5412a5c5d);
+            
+        
+
+        marker_b11d11498fff90183087c248db34be65.bindPopup(popup_c2b57b6dab54d5131dd2d44500f6984c)
+        ;
+
+        
+    
+    
+            marker_b11d11498fff90183087c248db34be65.bindTooltip(
+                `<div>
+                     Böhlen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b11d11498fff90183087c248db34be65.setIcon(icon_cc85369dcb57e6bd8d20bf127bf96470);
+            
+    
+            var marker_8617b72408d7415d33e2f993e375110e = L.marker(
+                [52.31912, 10.5600944],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_2b6165ba8dfaa31edda4d0b85766f317 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3fcbd82e5342594051b87970daec8a9f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7b218ce42a173de49e71da00de79804c = $(`<div id="html_7b218ce42a173de49e71da00de79804c" style="width: 100.0%; height: 100.0%;"><b>Braunschweig - Wolfsburg</b><br><small>Forschungsflughafen Braunschweig-Wolfsburg, Tiefe Straße, Wabe-Schunter-Beberbach, Braunschweig, Niedersachsen, 38110, Deutschland</small></div>`)[0];
+                popup_3fcbd82e5342594051b87970daec8a9f.setContent(html_7b218ce42a173de49e71da00de79804c);
+            
+        
+
+        marker_8617b72408d7415d33e2f993e375110e.bindPopup(popup_3fcbd82e5342594051b87970daec8a9f)
+        ;
+
+        
+    
+    
+            marker_8617b72408d7415d33e2f993e375110e.bindTooltip(
+                `<div>
+                     Braunschweig - Wolfsburg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8617b72408d7415d33e2f993e375110e.setIcon(icon_2b6165ba8dfaa31edda4d0b85766f317);
+            
+    
+            var marker_bfce26980a0c644419830dad13a373e9 = L.marker(
+                [50.6764435, 8.1699718],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_5bef4abd8a3c2bc68e5fb2d1d8dab4a9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e9f67d7396cfb0b384f550ac89767423 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4f0c76de9c5bf455444c79f8ef650507 = $(`<div id="html_4f0c76de9c5bf455444c79f8ef650507" style="width: 100.0%; height: 100.0%;"><b>Breitscheid</b><br><small>Flugplatz Breitscheid, Auf der Hub, Breitscheid, Lahn-Dill-Kreis, Hessen, 35767, Deutschland</small></div>`)[0];
+                popup_e9f67d7396cfb0b384f550ac89767423.setContent(html_4f0c76de9c5bf455444c79f8ef650507);
+            
+        
+
+        marker_bfce26980a0c644419830dad13a373e9.bindPopup(popup_e9f67d7396cfb0b384f550ac89767423)
+        ;
+
+        
+    
+    
+            marker_bfce26980a0c644419830dad13a373e9.bindTooltip(
+                `<div>
+                     Breitscheid
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bfce26980a0c644419830dad13a373e9.setIcon(icon_5bef4abd8a3c2bc68e5fb2d1d8dab4a9);
+            
+    
+            var marker_08b73f9236a19a964a93b1ebb1bd44b2 = L.marker(
+                [51.4028248, 8.6421018],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_5e35b5732f85f5051ed43fc0c82c0b09 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d65c0a9ccfcdb9006912e2ae92d3e587 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ed434fcfc3a5c4f883c7f9891856291d = $(`<div id="html_ed434fcfc3a5c4f883c7f9891856291d" style="width: 100.0%; height: 100.0%;"><b>Brilon</b><br><small>Flugplatz Brilon (Thülener Bruch), B 7, Thülen, Brilon, Hochsauerlandkreis, Nordrhein-Westfalen, 59929, Deutschland</small></div>`)[0];
+                popup_d65c0a9ccfcdb9006912e2ae92d3e587.setContent(html_ed434fcfc3a5c4f883c7f9891856291d);
+            
+        
+
+        marker_08b73f9236a19a964a93b1ebb1bd44b2.bindPopup(popup_d65c0a9ccfcdb9006912e2ae92d3e587)
+        ;
+
+        
+    
+    
+            marker_08b73f9236a19a964a93b1ebb1bd44b2.bindTooltip(
+                `<div>
+                     Brilon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_08b73f9236a19a964a93b1ebb1bd44b2.setIcon(icon_5e35b5732f85f5051ed43fc0c82c0b09);
+            
+    
+            var marker_d8c987135f3e7b843287f8fde3ed7b90 = L.marker(
+                [49.7857186, 11.1624178],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_aa53dbce51ad705acc2bc489029f88e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_13e6eb049a458287d4977de02cd7d872 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f5a518437a51388d6bc5b654f3caceeb = $(`<div id="html_f5a518437a51388d6bc5b654f3caceeb" style="width: 100.0%; height: 100.0%;"><b>Burg Feuerstein</b><br><small>Burg Feuerstein, FO 41, Breitenbach, Ebermannstadt, Ebermannstadt (VGem), Landkreis Forchheim, Bayern, 91320, Deutschland</small></div>`)[0];
+                popup_13e6eb049a458287d4977de02cd7d872.setContent(html_f5a518437a51388d6bc5b654f3caceeb);
+            
+        
+
+        marker_d8c987135f3e7b843287f8fde3ed7b90.bindPopup(popup_13e6eb049a458287d4977de02cd7d872)
+        ;
+
+        
+    
+    
+            marker_d8c987135f3e7b843287f8fde3ed7b90.bindTooltip(
+                `<div>
+                     Burg Feuerstein
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d8c987135f3e7b843287f8fde3ed7b90.setIcon(icon_aa53dbce51ad705acc2bc489029f88e9);
+            
+    
+            var marker_eae39a370273064f170972dddaddd86f = L.marker(
+                [51.6911096, 14.3961817],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_94622ecc87f961ae2ff24b28422bb1ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_95b752a1d27c37a5078ffdc474da48fa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9d9d3ec81c81aeb47e9e98525301e440 = $(`<div id="html_9d9d3ec81c81aeb47e9e98525301e440" style="width: 100.0%; height: 100.0%;"><b>Cottbus - Neuhausen</b><br><small>B97n Ortsumgehung Cottbus (3. VA), Neuhausener Radweg, Frauendorf, Neuhausen/Spree, Spree-Neiße - Sprjewja-Nysa, Brandenburg, 03058, Deutschland</small></div>`)[0];
+                popup_95b752a1d27c37a5078ffdc474da48fa.setContent(html_9d9d3ec81c81aeb47e9e98525301e440);
+            
+        
+
+        marker_eae39a370273064f170972dddaddd86f.bindPopup(popup_95b752a1d27c37a5078ffdc474da48fa)
+        ;
+
+        
+    
+    
+            marker_eae39a370273064f170972dddaddd86f.bindTooltip(
+                `<div>
+                     Cottbus - Neuhausen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eae39a370273064f170972dddaddd86f.setIcon(icon_94622ecc87f961ae2ff24b28422bb1ab);
+            
+    
+            var marker_d7c5e56b12bf078e85194299fa9dd845 = L.marker(
+                [52.5813859, 8.3481867],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_b3967179c80ac5c0d92e83656a0c12ff = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_852c4f09f868b90619a0c806e680da52 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_abc974de5f3ac87528274fbc29486823 = $(`<div id="html_abc974de5f3ac87528274fbc29486823" style="width: 100.0%; height: 100.0%;"><b>Diepholz - Dümmerland</b><br><small>Flugplatz Diepholz-Dümmerland, Lehmder Damm, Barlage, Diepholz, Landkreis Diepholz, Niedersachsen, 49356, Deutschland</small></div>`)[0];
+                popup_852c4f09f868b90619a0c806e680da52.setContent(html_abc974de5f3ac87528274fbc29486823);
+            
+        
+
+        marker_d7c5e56b12bf078e85194299fa9dd845.bindPopup(popup_852c4f09f868b90619a0c806e680da52)
+        ;
+
+        
+    
+    
+            marker_d7c5e56b12bf078e85194299fa9dd845.bindTooltip(
+                `<div>
+                     Diepholz - Dümmerland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d7c5e56b12bf078e85194299fa9dd845.setIcon(icon_b3967179c80ac5c0d92e83656a0c12ff);
+            
+    
+            var marker_de32748d1f486c8d6336dfbe58745bb2 = L.marker(
+                [50.5658416, 7.6533082],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_d65b84648280811a1705b3da3fb5ff86 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_63fbc624157d88268ddf7508680806a4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_21aed0967d3d13345bcb95c9f8cb4692 = $(`<div id="html_21aed0967d3d13345bcb95c9f8cb4692" style="width: 100.0%; height: 100.0%;"><b>Dierdorf - Wienau</b><br><small>Flugplatz Dierdorf-Wienau, K 122, Wienau, Dierdorf, Landkreis Neuwied, Rheinland-Pfalz, 56269, Deutschland</small></div>`)[0];
+                popup_63fbc624157d88268ddf7508680806a4.setContent(html_21aed0967d3d13345bcb95c9f8cb4692);
+            
+        
+
+        marker_de32748d1f486c8d6336dfbe58745bb2.bindPopup(popup_63fbc624157d88268ddf7508680806a4)
+        ;
+
+        
+    
+    
+            marker_de32748d1f486c8d6336dfbe58745bb2.bindTooltip(
+                `<div>
+                     Dierdorf - Wienau
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_de32748d1f486c8d6336dfbe58745bb2.setIcon(icon_d65b84648280811a1705b3da3fb5ff86);
+            
+    
+            var marker_5e706238b2e1f3a14f13e2dc40018cd9 = L.marker(
+                [48.9224276, 15.2947858],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_a0322f41ec931a4fc9a4a7b88c620a4c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f8dd15d2a847daabed0ae9e5abfa294 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1d44d8efd159e5a0f4f1a1cb7c126321 = $(`<div id="html_1d44d8efd159e5a0f4f1a1cb7c126321" style="width: 100.0%; height: 100.0%;"><b>Dobersberg (AT)</b><br><small>Flugplatz Dobersberg, Thayatal Bundesstraße, Katastralgemeinde Dobersberg, Tiefenbach, Dobersberg, Bezirk Waidhofen an der Thaya, Niederösterreich, 3851, Österreich</small></div>`)[0];
+                popup_7f8dd15d2a847daabed0ae9e5abfa294.setContent(html_1d44d8efd159e5a0f4f1a1cb7c126321);
+            
+        
+
+        marker_5e706238b2e1f3a14f13e2dc40018cd9.bindPopup(popup_7f8dd15d2a847daabed0ae9e5abfa294)
+        ;
+
+        
+    
+    
+            marker_5e706238b2e1f3a14f13e2dc40018cd9.bindTooltip(
+                `<div>
+                     Dobersberg (AT)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5e706238b2e1f3a14f13e2dc40018cd9.setIcon(icon_a0322f41ec931a4fc9a4a7b88c620a4c);
+            
+    
+            var marker_32ccc8f644e1bf4ba3dc8e4461ad9423 = L.marker(
+                [48.6779607, 9.8462121],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_98e4d0ac477ff109bfce4a1b248e01d9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_11ecd14867d93917646883d6b12362d5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_060d6aec725cf027af479ee546d476fd = $(`<div id="html_060d6aec725cf027af479ee546d476fd" style="width: 100.0%; height: 100.0%;"><b>Donzdorf</b><br><small>Flugplatz Donzdorf-Messelberg, K 1401, Schnittlingen, Donzdorf, GVV Mittleres Fils-Lautertal, Landkreis Göppingen, Baden-Württemberg, 73072, Deutschland</small></div>`)[0];
+                popup_11ecd14867d93917646883d6b12362d5.setContent(html_060d6aec725cf027af479ee546d476fd);
+            
+        
+
+        marker_32ccc8f644e1bf4ba3dc8e4461ad9423.bindPopup(popup_11ecd14867d93917646883d6b12362d5)
+        ;
+
+        
+    
+    
+            marker_32ccc8f644e1bf4ba3dc8e4461ad9423.bindTooltip(
+                `<div>
+                     Donzdorf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_32ccc8f644e1bf4ba3dc8e4461ad9423.setIcon(icon_98e4d0ac477ff109bfce4a1b248e01d9);
+            
+    
+            var marker_c04cb368dda3c0a4ff5f306b3ec132c4 = L.marker(
+                [52.8301312, 13.7183212],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_55d82996c0b6e8514e2d9b8425f22414 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6da6356436ebccb7989caf66b467dcf0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d03324f521be984b479203d5183210d3 = $(`<div id="html_d03324f521be984b479203d5183210d3" style="width: 100.0%; height: 100.0%;"><b>Eberswalde - Finow</b><br><small>Am Flugplatz, Finow, Eberswalde, Barnim, Brandenburg, 16227, Deutschland</small></div>`)[0];
+                popup_6da6356436ebccb7989caf66b467dcf0.setContent(html_d03324f521be984b479203d5183210d3);
+            
+        
+
+        marker_c04cb368dda3c0a4ff5f306b3ec132c4.bindPopup(popup_6da6356436ebccb7989caf66b467dcf0)
+        ;
+
+        
+    
+    
+            marker_c04cb368dda3c0a4ff5f306b3ec132c4.bindTooltip(
+                `<div>
+                     Eberswalde - Finow
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c04cb368dda3c0a4ff5f306b3ec132c4.setIcon(icon_55d82996c0b6e8514e2d9b8425f22414);
+            
+    
+            var marker_019ffe312b21d5e6d2ea15597ab3f099 = L.marker(
+                [50.4270361, 8.0117453],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_6660ae1d7eaab1c49e0a9d706e02310b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_21aed0408e76395cb9b520aad539c1c7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3fff1f49804544130707114b5aa18291 = $(`<div id="html_3fff1f49804544130707114b5aa18291" style="width: 100.0%; height: 100.0%;"><b>Elz</b><br><small>Flugplatz Elz, Sandweg, Gewerbegebiet Sandweg, Elz, Landkreis Limburg-Weilburg, Hessen, 65604, Deutschland</small></div>`)[0];
+                popup_21aed0408e76395cb9b520aad539c1c7.setContent(html_3fff1f49804544130707114b5aa18291);
+            
+        
+
+        marker_019ffe312b21d5e6d2ea15597ab3f099.bindPopup(popup_21aed0408e76395cb9b520aad539c1c7)
+        ;
+
+        
+    
+    
+            marker_019ffe312b21d5e6d2ea15597ab3f099.bindTooltip(
+                `<div>
+                     Elz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_019ffe312b21d5e6d2ea15597ab3f099.setIcon(icon_6660ae1d7eaab1c49e0a9d706e02310b);
+            
+    
+            var marker_ff13bb1877c547dfbb096a019d12a9e9 = L.marker(
+                [46.7284183, 14.0906473],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_3154992813df15b5368ca401ddfdae64 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_56ef7ff7542b111248ca2b29f9c78c82 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_84cd155e9f0277715e206a2efb3cfc1d = $(`<div id="html_84cd155e9f0277715e206a2efb3cfc1d" style="width: 100.0%; height: 100.0%;"><b>Feldkirchen</b><br><small>Bezirk Feldkirchen, Kärnten, Österreich</small></div>`)[0];
+                popup_56ef7ff7542b111248ca2b29f9c78c82.setContent(html_84cd155e9f0277715e206a2efb3cfc1d);
+            
+        
+
+        marker_ff13bb1877c547dfbb096a019d12a9e9.bindPopup(popup_56ef7ff7542b111248ca2b29f9c78c82)
+        ;
+
+        
+    
+    
+            marker_ff13bb1877c547dfbb096a019d12a9e9.bindTooltip(
+                `<div>
+                     Feldkirchen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ff13bb1877c547dfbb096a019d12a9e9.setIcon(icon_3154992813df15b5368ca401ddfdae64);
+            
+    
+            var marker_88d6a7457767a0d124c2be6cac7200ca = L.marker(
+                [54.7717459, 9.3799646],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_c579c86df8a724fae9ca0a8c1bd9b4b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_301f3756102f4a2e0a268b2a05ff6928 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3f0e7f456e4df77a972e3c9a000417c5 = $(`<div id="html_3f0e7f456e4df77a972e3c9a000417c5" style="width: 100.0%; height: 100.0%;"><b>Flensburg</b><br><small>Flugplatz Flensburg-Schäferhaus, Lecker Chaussee, Schäferhaus, Weiche, Flensburg, Schleswig-Holstein, 24941, Deutschland</small></div>`)[0];
+                popup_301f3756102f4a2e0a268b2a05ff6928.setContent(html_3f0e7f456e4df77a972e3c9a000417c5);
+            
+        
+
+        marker_88d6a7457767a0d124c2be6cac7200ca.bindPopup(popup_301f3756102f4a2e0a268b2a05ff6928)
+        ;
+
+        
+    
+    
+            marker_88d6a7457767a0d124c2be6cac7200ca.bindTooltip(
+                `<div>
+                     Flensburg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_88d6a7457767a0d124c2be6cac7200ca.setIcon(icon_c579c86df8a724fae9ca0a8c1bd9b4b5);
+            
+    
+            var marker_a1535ce7a47240ea03b0c474d174d336 = L.marker(
+                [46.9278084, 14.4313653],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_678cc06b09a1acdabafd94a8430b875b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_65b946962cca157e73fc896b85aebd2d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e61b8e101bd833ab111da11e9d1da239 = $(`<div id="html_e61b8e101bd833ab111da11e9d1da239" style="width: 100.0%; height: 100.0%;"><b>Friesach Hirt (AT)</b><br><small>Flugplatz Friesach - Hirt, Micheldorf, Ostrog, Micheldorf, Bezirk St. Veit an der Glan, Kärnten, 9322, Österreich</small></div>`)[0];
+                popup_65b946962cca157e73fc896b85aebd2d.setContent(html_e61b8e101bd833ab111da11e9d1da239);
+            
+        
+
+        marker_a1535ce7a47240ea03b0c474d174d336.bindPopup(popup_65b946962cca157e73fc896b85aebd2d)
+        ;
+
+        
+    
+    
+            marker_a1535ce7a47240ea03b0c474d174d336.bindTooltip(
+                `<div>
+                     Friesach Hirt (AT)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a1535ce7a47240ea03b0c474d174d336.setIcon(icon_678cc06b09a1acdabafd94a8430b875b);
+            
+    
+            var marker_fbf10d244ea6622b968fcb0739984fe3 = L.marker(
+                [50.6438899, 12.1751158],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_23b2b275cbf108475d2716967e7ed1fa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a9993598aa90f95a167c4b7925d85a8f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aaffe697e2c33105c64ab0482862e43a = $(`<div id="html_aaffe697e2c33105c64ab0482862e43a" style="width: 100.0%; height: 100.0%;"><b>Greiz -  Obergrochlitz</b><br><small>Heinz-Peinl-Flugplatz Greiz-Obergrochlitz, Schluchter, Obergrochlitz, Obergrochlitz / Caselwitz, Untergrochlitz, Greiz, Thüringen, 07973, Deutschland</small></div>`)[0];
+                popup_a9993598aa90f95a167c4b7925d85a8f.setContent(html_aaffe697e2c33105c64ab0482862e43a);
+            
+        
+
+        marker_fbf10d244ea6622b968fcb0739984fe3.bindPopup(popup_a9993598aa90f95a167c4b7925d85a8f)
+        ;
+
+        
+    
+    
+            marker_fbf10d244ea6622b968fcb0739984fe3.bindTooltip(
+                `<div>
+                     Greiz -  Obergrochlitz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fbf10d244ea6622b968fcb0739984fe3.setIcon(icon_23b2b275cbf108475d2716967e7ed1fa);
+            
+    
+            var marker_1903d3836cefab04473ef6b6f15332d5 = L.marker(
+                [49.1161362, 10.7406852],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_dcc7c09294d69ae30cc9900aa1bb75b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_073c1dd61eb0d903e9387c6d81bb0755 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5b6325970e5ef945a04acad5209d76de = $(`<div id="html_5b6325970e5ef945a04acad5209d76de" style="width: 100.0%; height: 100.0%;"><b>Gunzenhausen</b><br><small>Gunzenhausen, Landkreis Weißenburg-Gunzenhausen, Bayern, 91710, Deutschland</small></div>`)[0];
+                popup_073c1dd61eb0d903e9387c6d81bb0755.setContent(html_5b6325970e5ef945a04acad5209d76de);
+            
+        
+
+        marker_1903d3836cefab04473ef6b6f15332d5.bindPopup(popup_073c1dd61eb0d903e9387c6d81bb0755)
+        ;
+
+        
+    
+    
+            marker_1903d3836cefab04473ef6b6f15332d5.bindTooltip(
+                `<div>
+                     Gunzenhausen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1903d3836cefab04473ef6b6f15332d5.setIcon(icon_dcc7c09294d69ae30cc9900aa1bb75b9);
+            
+    
+            var marker_e9ee93c4dfbc7c439f1c8af057dcf162 = L.marker(
+                [54.1531505, 8.9018121],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_e2f7da3b8d6b41fabf0100c241579b01 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_17808e89edf9618b849faa8fbc02893a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_07eb891e55fa32ee94128a9e49bc54e2 = $(`<div id="html_07eb891e55fa32ee94128a9e49bc54e2" style="width: 100.0%; height: 100.0%;"><b>Heide - Büsum</b><br><small>Flugplatz Heide-Büsum, Osterhof, Oesterdeichstrich, Büsum-Wesselburen, Kreis Dithmarschen, Schleswig-Holstein, 25761, Deutschland</small></div>`)[0];
+                popup_17808e89edf9618b849faa8fbc02893a.setContent(html_07eb891e55fa32ee94128a9e49bc54e2);
+            
+        
+
+        marker_e9ee93c4dfbc7c439f1c8af057dcf162.bindPopup(popup_17808e89edf9618b849faa8fbc02893a)
+        ;
+
+        
+    
+    
+            marker_e9ee93c4dfbc7c439f1c8af057dcf162.bindTooltip(
+                `<div>
+                     Heide - Büsum
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e9ee93c4dfbc7c439f1c8af057dcf162.setIcon(icon_e2f7da3b8d6b41fabf0100c241579b01);
+            
+    
+            var marker_61b04e090cda45cd5ec7bba40104bec2 = L.marker(
+                [52.763961, 9.6138403],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_b5d7201dd3fab0e862699ff2417ebd2c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ce29795c8b72d86e62cef8ea15bc3d72 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c5b479a0dd6f8974df84b06e9ffd1550 = $(`<div id="html_c5b479a0dd6f8974df84b06e9ffd1550" style="width: 100.0%; height: 100.0%;"><b>Hodenhagen</b><br><small>Flugplatz Hodenhagen, Zeppelinstraße, Hudemühlen, Hodenhagen, Samtgemeinde Ahlden, Heidekreis, Niedersachsen, 29693, Deutschland</small></div>`)[0];
+                popup_ce29795c8b72d86e62cef8ea15bc3d72.setContent(html_c5b479a0dd6f8974df84b06e9ffd1550);
+            
+        
+
+        marker_61b04e090cda45cd5ec7bba40104bec2.bindPopup(popup_ce29795c8b72d86e62cef8ea15bc3d72)
+        ;
+
+        
+    
+    
+            marker_61b04e090cda45cd5ec7bba40104bec2.bindTooltip(
+                `<div>
+                     Hodenhagen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_61b04e090cda45cd5ec7bba40104bec2.setIcon(icon_b5d7201dd3fab0e862699ff2417ebd2c);
+            
+    
+            var marker_bef733d169b25024cb25710be22d2e06 = L.marker(
+                [49.6108668, 7.1864828],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_61523ecdc87a0a074c3dab2513325087 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a82f549ecf695ee5cc864d5273e33aeb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3a969893e4f019e36be88238e5330b0c = $(`<div id="html_3a969893e4f019e36be88238e5330b0c" style="width: 100.0%; height: 100.0%;"><b>Hoppstädten - Weiersbach</b><br><small>Flugplatz Hoppstädten-Weiersbach, Im Schlimm, Hoppstädten, Hoppstädten-Weiersbach, Birkenfeld, Landkreis Birkenfeld, Rheinland-Pfalz, 55768, Deutschland</small></div>`)[0];
+                popup_a82f549ecf695ee5cc864d5273e33aeb.setContent(html_3a969893e4f019e36be88238e5330b0c);
+            
+        
+
+        marker_bef733d169b25024cb25710be22d2e06.bindPopup(popup_a82f549ecf695ee5cc864d5273e33aeb)
+        ;
+
+        
+    
+    
+            marker_bef733d169b25024cb25710be22d2e06.bindTooltip(
+                `<div>
+                     Hoppstädten - Weiersbach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bef733d169b25024cb25710be22d2e06.setIcon(icon_61523ecdc87a0a074c3dab2513325087);
+            
+    
+            var marker_dd047ffe4d393c7ec04e1944030c23ba = L.marker(
+                [51.807428, 9.3785809],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_33a9f7b83d79b3502cfed575a663d8e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22b1e08829c6b24befd2264cd43b3a16 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9148e5e02e7bcc989d44751a0fa59f98 = $(`<div id="html_9148e5e02e7bcc989d44751a0fa59f98" style="width: 100.0%; height: 100.0%;"><b>Höxter - Holzminden</b><br><small>Flugplatz Höxter-Holzminden, Schrotweg, Brenkhausen, Höxter, Kreis Höxter, Nordrhein-Westfalen, 37671, Deutschland</small></div>`)[0];
+                popup_22b1e08829c6b24befd2264cd43b3a16.setContent(html_9148e5e02e7bcc989d44751a0fa59f98);
+            
+        
+
+        marker_dd047ffe4d393c7ec04e1944030c23ba.bindPopup(popup_22b1e08829c6b24befd2264cd43b3a16)
+        ;
+
+        
+    
+    
+            marker_dd047ffe4d393c7ec04e1944030c23ba.bindTooltip(
+                `<div>
+                     Höxter - Holzminden
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dd047ffe4d393c7ec04e1944030c23ba.setIcon(icon_33a9f7b83d79b3502cfed575a663d8e7);
+            
+    
+            var marker_ffd3d062ba598fc515930bbc6bf41c7c = L.marker(
+                [48.2349392, 10.1357811],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_d51894ff66807b437ae405f849ade2d9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_573159fbd60259961ac9b9785907daa9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ee5cce8d7d8558ff6524ec924ce5a654 = $(`<div id="html_ee5cce8d7d8558ff6524ec924ce5a654" style="width: 100.0%; height: 100.0%;"><b>Illertissen</b><br><small>Flugplatz Illertissen, Jungviehweide, Tiefenbach, Illertissen, Landkreis Neu-Ulm, Bayern, 89257, Deutschland</small></div>`)[0];
+                popup_573159fbd60259961ac9b9785907daa9.setContent(html_ee5cce8d7d8558ff6524ec924ce5a654);
+            
+        
+
+        marker_ffd3d062ba598fc515930bbc6bf41c7c.bindPopup(popup_573159fbd60259961ac9b9785907daa9)
+        ;
+
+        
+    
+    
+            marker_ffd3d062ba598fc515930bbc6bf41c7c.bindTooltip(
+                `<div>
+                     Illertissen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ffd3d062ba598fc515930bbc6bf41c7c.setIcon(icon_d51894ff66807b437ae405f849ade2d9);
+            
+    
+            var marker_f418741417b02b08f9e131635a2ebaad = L.marker(
+                [50.9154336, 11.7132861],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_267670ab333c7f5a96b5641f4c3f92e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_59caec7b3cf34fb6d523042eb1d15940 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0cb3c25a8161022cd276d10e4bd3739d = $(`<div id="html_0cb3c25a8161022cd276d10e4bd3739d" style="width: 100.0%; height: 100.0%;"><b>Jena - Schöngleina</b><br><small>Flugplatz Jena-Schöngleina, 1, Flugplatz, Zinna, Schöngleina, Bad Klosterlausnitz, Saale-Holzland-Kreis, Thüringen, 07646, Deutschland</small></div>`)[0];
+                popup_59caec7b3cf34fb6d523042eb1d15940.setContent(html_0cb3c25a8161022cd276d10e4bd3739d);
+            
+        
+
+        marker_f418741417b02b08f9e131635a2ebaad.bindPopup(popup_59caec7b3cf34fb6d523042eb1d15940)
+        ;
+
+        
+    
+    
+            marker_f418741417b02b08f9e131635a2ebaad.bindTooltip(
+                `<div>
+                     Jena - Schöngleina
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f418741417b02b08f9e131635a2ebaad.setIcon(icon_267670ab333c7f5a96b5641f4c3f92e7);
+            
+    
+            var marker_bf02cc67175916363cd6f35b8192acd1 = L.marker(
+                [51.5294736, 6.5375815],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_a30bb3129b113716ae350f94c7dccf04 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c99a6363722bbc0bab9b080b876ed68f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_760d0c12b4d90727f47661f6185ee206 = $(`<div id="html_760d0c12b4d90727f47661f6185ee206" style="width: 100.0%; height: 100.0%;"><b>Kamp - Lintfort</b><br><small>Flugplatz Kamp-Lintfort, Alpener Straße, Saalhoff, Kamp-Lintfort, Kreis Wesel, Nordrhein-Westfalen, 47475, Deutschland</small></div>`)[0];
+                popup_c99a6363722bbc0bab9b080b876ed68f.setContent(html_760d0c12b4d90727f47661f6185ee206);
+            
+        
+
+        marker_bf02cc67175916363cd6f35b8192acd1.bindPopup(popup_c99a6363722bbc0bab9b080b876ed68f)
+        ;
+
+        
+    
+    
+            marker_bf02cc67175916363cd6f35b8192acd1.bindTooltip(
+                `<div>
+                     Kamp - Lintfort
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bf02cc67175916363cd6f35b8192acd1.setIcon(icon_a30bb3129b113716ae350f94c7dccf04);
+            
+    
+            var marker_b24ebe813f3425fb94a7e1a3c51854a9 = L.marker(
+                [53.3480352, 9.0224229],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_c8ddaf870859b894008d2b2773e5d83f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cd8385efaaa41063feac03374ee52e2b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ce6dee15f0e3e36b499a0bf9d366a05f = $(`<div id="html_ce6dee15f0e3e36b499a0bf9d366a05f" style="width: 100.0%; height: 100.0%;"><b>Karlshöfen</b><br><small>Zum Flugplatz, Karlshöfen, Gnarrenburg, Landkreis Rotenburg (Wümme), Niedersachsen, 27442, Deutschland</small></div>`)[0];
+                popup_cd8385efaaa41063feac03374ee52e2b.setContent(html_ce6dee15f0e3e36b499a0bf9d366a05f);
+            
+        
+
+        marker_b24ebe813f3425fb94a7e1a3c51854a9.bindPopup(popup_cd8385efaaa41063feac03374ee52e2b)
+        ;
+
+        
+    
+    
+            marker_b24ebe813f3425fb94a7e1a3c51854a9.bindTooltip(
+                `<div>
+                     Karlshöfen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b24ebe813f3425fb94a7e1a3c51854a9.setIcon(icon_c8ddaf870859b894008d2b2773e5d83f);
+            
+    
+            var marker_002edd61b9bf065e4b012d59005edccb = L.marker(
+                [50.1345737, 11.4583287],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_8cb491a0b8fc9a2290a25f295d38ef01 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d474a2e2d82f73796f7a2a1c1f8ae9d9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5b3804d3e05f5e7f5cb72d3415d681d4 = $(`<div id="html_5b3804d3e05f5e7f5cb72d3415d681d4" style="width: 100.0%; height: 100.0%;"><b>Kulmbach</b><br><small>Flugplatz Kulmbach, Trail zum Parkplatz, Oberpurbach, Kulmbach, Landkreis Kulmbach, Bayern, 95326, Deutschland</small></div>`)[0];
+                popup_d474a2e2d82f73796f7a2a1c1f8ae9d9.setContent(html_5b3804d3e05f5e7f5cb72d3415d681d4);
+            
+        
+
+        marker_002edd61b9bf065e4b012d59005edccb.bindPopup(popup_d474a2e2d82f73796f7a2a1c1f8ae9d9)
+        ;
+
+        
+    
+    
+            marker_002edd61b9bf065e4b012d59005edccb.bindTooltip(
+                `<div>
+                     Kulmbach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_002edd61b9bf065e4b012d59005edccb.setIcon(icon_8cb491a0b8fc9a2290a25f295d38ef01);
+            
+    
+            var marker_9f497a4643a759265034cd3d359a3ff4 = L.marker(
+                [52.9163257, 12.4324476],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_bbae01a6857198bfc0eb4c3782b56486 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f323bf968b1bcbf4212b7e0d2222d0ab = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ce7b836f83a84fd057dbe595fd277fe5 = $(`<div id="html_ce7b836f83a84fd057dbe595fd277fe5" style="width: 100.0%; height: 100.0%;"><b>Kyritz</b><br><small>Flugplatz, Heinrichsfelde, Kyritz, Ostprignitz-Ruppin, Brandenburg, 16866, Deutschland</small></div>`)[0];
+                popup_f323bf968b1bcbf4212b7e0d2222d0ab.setContent(html_ce7b836f83a84fd057dbe595fd277fe5);
+            
+        
+
+        marker_9f497a4643a759265034cd3d359a3ff4.bindPopup(popup_f323bf968b1bcbf4212b7e0d2222d0ab)
+        ;
+
+        
+    
+    
+            marker_9f497a4643a759265034cd3d359a3ff4.bindTooltip(
+                `<div>
+                     Kyritz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9f497a4643a759265034cd3d359a3ff4.setIcon(icon_bbae01a6857198bfc0eb4c3782b56486);
+            
+    
+            var marker_734b8a90d2bb5bfce21f1520ca94fc01 = L.marker(
+                [53.2718793, 7.44332],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_19d4a531d1bccb44b01f7ed8c151a82c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fb0d4a60465390218c0fac55a0081dcf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7ee3e31b96c92d18e0fd08ef56481952 = $(`<div id="html_7ee3e31b96c92d18e0fd08ef56481952" style="width: 100.0%; height: 100.0%;"><b>Leer - Papenburg</b><br><small>Flugplatz Leer-Papenburg, 83, Kloster-Thedinga-Straße, Eisinghausen, Nüttermoor, Leer (Ostfriesland), Landkreis Leer, Niedersachsen, 26789, Deutschland</small></div>`)[0];
+                popup_fb0d4a60465390218c0fac55a0081dcf.setContent(html_7ee3e31b96c92d18e0fd08ef56481952);
+            
+        
+
+        marker_734b8a90d2bb5bfce21f1520ca94fc01.bindPopup(popup_fb0d4a60465390218c0fac55a0081dcf)
+        ;
+
+        
+    
+    
+            marker_734b8a90d2bb5bfce21f1520ca94fc01.bindTooltip(
+                `<div>
+                     Leer - Papenburg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_734b8a90d2bb5bfce21f1520ca94fc01.setIcon(icon_19d4a531d1bccb44b01f7ed8c151a82c);
+            
+    
+            var marker_f97cb6b48e6112c5df42a964eb408b99 = L.marker(
+                [51.6475078, 7.1592236],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_86115d99012944abd72eb53b15e74d4e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cb817d020c03d590e7e5431b00c5ba55 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9a77627cab5a626c86812a4d48c85ee1 = $(`<div id="html_9a77627cab5a626c86812a4d48c85ee1" style="width: 100.0%; height: 100.0%;"><b>Loemühle</b><br><small>Flugplatz Loemühle, 301, Hülsstraße, Hüls-Süd, Marl, Kreis Recklinghausen, Nordrhein-Westfalen, 45770, Deutschland</small></div>`)[0];
+                popup_cb817d020c03d590e7e5431b00c5ba55.setContent(html_9a77627cab5a626c86812a4d48c85ee1);
+            
+        
+
+        marker_f97cb6b48e6112c5df42a964eb408b99.bindPopup(popup_cb817d020c03d590e7e5431b00c5ba55)
+        ;
+
+        
+    
+    
+            marker_f97cb6b48e6112c5df42a964eb408b99.bindTooltip(
+                `<div>
+                     Loemühle
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f97cb6b48e6112c5df42a964eb408b99.setIcon(icon_86115d99012944abd72eb53b15e74d4e);
+            
+    
+            var marker_e7539115b5ade9d978bcdd080ca29609 = L.marker(
+                [49.4892913, 8.4673098],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_1a684e7a43e275008e836536fbf525c4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f339105827ffd08cf3acb531af1f03d3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e7bbf9df5f3d6fa14849f3fbe4231336 = $(`<div id="html_e7bbf9df5f3d6fa14849f3fbe4231336" style="width: 100.0%; height: 100.0%;"><b>Mannheim</b><br><small>Mannheim, Baden-Württemberg, Deutschland</small></div>`)[0];
+                popup_f339105827ffd08cf3acb531af1f03d3.setContent(html_e7bbf9df5f3d6fa14849f3fbe4231336);
+            
+        
+
+        marker_e7539115b5ade9d978bcdd080ca29609.bindPopup(popup_f339105827ffd08cf3acb531af1f03d3)
+        ;
+
+        
+    
+    
+            marker_e7539115b5ade9d978bcdd080ca29609.bindTooltip(
+                `<div>
+                     Mannheim
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e7539115b5ade9d978bcdd080ca29609.setIcon(icon_1a684e7a43e275008e836536fbf525c4);
+            
+    
+            var marker_30922151bbe5ce60f32bde621d958e4b = L.marker(
+                [50.8796754, 8.8185868],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_dc3409a25a53d96df5b1c28427afd3cd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_797e8bfe71631ccadee567827b243e75 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0d72bdbfab55828f8f88b31fae71e382 = $(`<div id="html_0d72bdbfab55828f8f88b31fae71e382" style="width: 100.0%; height: 100.0%;"><b>Marburg - Schönstadt</b><br><small>Zum Flugplatz, Schönstadt, Cölbe, Landkreis Marburg-Biedenkopf, Hessen, 35091, Deutschland</small></div>`)[0];
+                popup_797e8bfe71631ccadee567827b243e75.setContent(html_0d72bdbfab55828f8f88b31fae71e382);
+            
+        
+
+        marker_30922151bbe5ce60f32bde621d958e4b.bindPopup(popup_797e8bfe71631ccadee567827b243e75)
+        ;
+
+        
+    
+    
+            marker_30922151bbe5ce60f32bde621d958e4b.bindTooltip(
+                `<div>
+                     Marburg - Schönstadt
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_30922151bbe5ce60f32bde621d958e4b.setIcon(icon_dc3409a25a53d96df5b1c28427afd3cd);
+            
+    
+            var marker_944163b484edd3150465aef064ffb290 = L.marker(
+                [51.0998422, 7.6035554],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_be3c322782365c643e53b354c17eb2b3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_adc0b27dd577c100a0898ca8008659ad = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1282220c083e7a91f5a2f623af785f98 = $(`<div id="html_1282220c083e7a91f5a2f623af785f98" style="width: 100.0%; height: 100.0%;"><b>Meinerzhagen</b><br><small>Flugplatz Meinerzhagen, Marienheider Straße, Marienheide, Beutringhausen, Genkel, Meinerzhagen, Märkischer Kreis, Nordrhein-Westfalen, 58540, Deutschland</small></div>`)[0];
+                popup_adc0b27dd577c100a0898ca8008659ad.setContent(html_1282220c083e7a91f5a2f623af785f98);
+            
+        
+
+        marker_944163b484edd3150465aef064ffb290.bindPopup(popup_adc0b27dd577c100a0898ca8008659ad)
+        ;
+
+        
+    
+    
+            marker_944163b484edd3150465aef064ffb290.bindTooltip(
+                `<div>
+                     Meinerzhagen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_944163b484edd3150465aef064ffb290.setIcon(icon_be3c322782365c643e53b354c17eb2b3);
+            
+    
+            var marker_738f61e76a4b3cb3017c8f70a336e04c = L.marker(
+                [53.3049876, 12.7407679],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_5be86ed8b2d5846536fe5e4d969bf95c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9e7f0b5c3c3e5abfb507f87a1d1cdd58 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_042749dd73bfb2fb0ab47ba1126da251 = $(`<div id="html_042749dd73bfb2fb0ab47ba1126da251" style="width: 100.0%; height: 100.0%;"><b>Müritz Airpark</b><br><small>Müritz Airpark, Albert Hofmann Ring, Lärz, Röbel-Müritz, Mecklenburgische Seenplatte, Mecklenburg-Vorpommern, 17248, Deutschland</small></div>`)[0];
+                popup_9e7f0b5c3c3e5abfb507f87a1d1cdd58.setContent(html_042749dd73bfb2fb0ab47ba1126da251);
+            
+        
+
+        marker_738f61e76a4b3cb3017c8f70a336e04c.bindPopup(popup_9e7f0b5c3c3e5abfb507f87a1d1cdd58)
+        ;
+
+        
+    
+    
+            marker_738f61e76a4b3cb3017c8f70a336e04c.bindTooltip(
+                `<div>
+                     Müritz Airpark
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_738f61e76a4b3cb3017c8f70a336e04c.setIcon(icon_5be86ed8b2d5846536fe5e4d969bf95c);
+            
+    
+            var marker_06e17d28f3e2ac3d3117f653545b2294 = L.marker(
+                [54.0780031, 9.939063],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_80c97558364c530d534ec1dee4fc72c5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa252450e1d05a42b37d096f256f6f2b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a0c0ef51cccd2badc66fccd8bae35422 = $(`<div id="html_a0c0ef51cccd2badc66fccd8bae35422" style="width: 100.0%; height: 100.0%;"><b>Neumünster</b><br><small>Flugplatz Neumünster, Dreschflegel, Böcklersiedlung, Böcklersiedlung/Bugenhagen, Neumünster, Schleswig-Holstein, 24537, Deutschland</small></div>`)[0];
+                popup_fa252450e1d05a42b37d096f256f6f2b.setContent(html_a0c0ef51cccd2badc66fccd8bae35422);
+            
+        
+
+        marker_06e17d28f3e2ac3d3117f653545b2294.bindPopup(popup_fa252450e1d05a42b37d096f256f6f2b)
+        ;
+
+        
+    
+    
+            marker_06e17d28f3e2ac3d3117f653545b2294.bindTooltip(
+                `<div>
+                     Neumünster
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_06e17d28f3e2ac3d3117f653545b2294.setIcon(icon_80c97558364c530d534ec1dee4fc72c5);
+            
+    
+            var marker_ec72d57b40068c1377ffd0d466b20453 = L.marker(
+                [47.4781279, 14.0060927],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_e994209ac20e94099f3ce1c77dec0a2b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_316e49222b0a04612fc769751a850986 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f396bc9c5569bc7ee761050ad1f22c6b = $(`<div id="html_f396bc9c5569bc7ee761050ad1f22c6b" style="width: 100.0%; height: 100.0%;"><b>Niederöblarn</b><br><small>Niederöblarn, Öblarnerstraße, Moosberg, Niederöblarn, Öblarn, Politische Expositur Gröbming, Bezirk Liezen, Steiermark, 8960, Österreich</small></div>`)[0];
+                popup_316e49222b0a04612fc769751a850986.setContent(html_f396bc9c5569bc7ee761050ad1f22c6b);
+            
+        
+
+        marker_ec72d57b40068c1377ffd0d466b20453.bindPopup(popup_316e49222b0a04612fc769751a850986)
+        ;
+
+        
+    
+    
+            marker_ec72d57b40068c1377ffd0d466b20453.bindTooltip(
+                `<div>
+                     Niederöblarn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ec72d57b40068c1377ffd0d466b20453.setIcon(icon_e994209ac20e94099f3ce1c77dec0a2b);
+            
+    
+            var marker_9208e25ffc0d9dc68c38e9f1e5317ead = L.marker(
+                [49.4003232, 9.9189607],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_d5bea395afcef652d5d6764b1f735b39 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d2e62bd8696c588365f355a951a4088a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d76a703f790bf708ad25ad2c01ec83b1 = $(`<div id="html_d76a703f790bf708ad25ad2c01ec83b1" style="width: 100.0%; height: 100.0%;"><b>Niederstetten</b><br><small>Niederstetten, Main-Tauber-Kreis, Baden-Württemberg, 97996, Deutschland</small></div>`)[0];
+                popup_d2e62bd8696c588365f355a951a4088a.setContent(html_d76a703f790bf708ad25ad2c01ec83b1);
+            
+        
+
+        marker_9208e25ffc0d9dc68c38e9f1e5317ead.bindPopup(popup_d2e62bd8696c588365f355a951a4088a)
+        ;
+
+        
+    
+    
+            marker_9208e25ffc0d9dc68c38e9f1e5317ead.bindTooltip(
+                `<div>
+                     Niederstetten
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9208e25ffc0d9dc68c38e9f1e5317ead.setIcon(icon_d5bea395afcef652d5d6764b1f735b39);
+            
+    
+            var marker_494218700348406efbead10f958a6e55 = L.marker(
+                [49.2221592, 12.2965192],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_5d429d7358d5c2d189b48e7c9ec9bba6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_39ad1c7329176038c6bd9ee88dea640d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_10333f1c3e38a82db7432d2b4fb54391 = $(`<div id="html_10333f1c3e38a82db7432d2b4fb54391" style="width: 100.0%; height: 100.0%;"><b>Nittenau - Bruck</b><br><small>Flugplatz Nittenau-Bruck, Sulzmühl, Waltenried, Sulzmühl, Nittenau, Landkreis Schwandorf, Bayern, 93149, Deutschland</small></div>`)[0];
+                popup_39ad1c7329176038c6bd9ee88dea640d.setContent(html_10333f1c3e38a82db7432d2b4fb54391);
+            
+        
+
+        marker_494218700348406efbead10f958a6e55.bindPopup(popup_39ad1c7329176038c6bd9ee88dea640d)
+        ;
+
+        
+    
+    
+            marker_494218700348406efbead10f958a6e55.bindTooltip(
+                `<div>
+                     Nittenau - Bruck
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_494218700348406efbead10f958a6e55.setIcon(icon_5d429d7358d5c2d189b48e7c9ec9bba6);
+            
+    
+            var marker_1e01fdb5a9c9885bcc6d65c932d60d76 = L.marker(
+                [53.7683587, 8.6417925],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_ff5f8f70ca718fb03e5f92f0008c3d8c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6f08a5d0a8a8ef02e145003b2e28ef42 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_14cddbdf3e4c138ad0d05dfeaf92f2d5 = $(`<div id="html_14cddbdf3e4c138ad0d05dfeaf92f2d5" style="width: 100.0%; height: 100.0%;"><b>Nordholz - Spieka</b><br><small>Flugplatz Nordholz-Spieka, 1, Flying Otto Weg, Nordholz, Wurster Nordseeküste, Landkreis Cuxhaven, Niedersachsen, 27639, Deutschland</small></div>`)[0];
+                popup_6f08a5d0a8a8ef02e145003b2e28ef42.setContent(html_14cddbdf3e4c138ad0d05dfeaf92f2d5);
+            
+        
+
+        marker_1e01fdb5a9c9885bcc6d65c932d60d76.bindPopup(popup_6f08a5d0a8a8ef02e145003b2e28ef42)
+        ;
+
+        
+    
+    
+            marker_1e01fdb5a9c9885bcc6d65c932d60d76.bindTooltip(
+                `<div>
+                     Nordholz - Spieka
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1e01fdb5a9c9885bcc6d65c932d60d76.setIcon(icon_ff5f8f70ca718fb03e5f92f0008c3d8c);
+            
+    
+            var marker_a0c9df180aa01509ac2947142226e459 = L.marker(
+                [53.0685819, 8.3130527],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_116eb31c3d588e6a54a77b0d87636777 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ff54d3678e81c037bf897c60c79392cd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_55ece64da246463ac58dc0940f6c98f4 = $(`<div id="html_55ece64da246463ac58dc0940f6c98f4" style="width: 100.0%; height: 100.0%;"><b>Oldenburg - Hatten</b><br><small>Flugplatz Oldenburg-Hatten, Hatter Landstraße, Sandtange, Hatten, Landkreis Oldenburg, Niedersachsen, 26209, Deutschland</small></div>`)[0];
+                popup_ff54d3678e81c037bf897c60c79392cd.setContent(html_55ece64da246463ac58dc0940f6c98f4);
+            
+        
+
+        marker_a0c9df180aa01509ac2947142226e459.bindPopup(popup_ff54d3678e81c037bf897c60c79392cd)
+        ;
+
+        
+    
+    
+            marker_a0c9df180aa01509ac2947142226e459.bindTooltip(
+                `<div>
+                     Oldenburg - Hatten
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a0c9df180aa01509ac2947142226e459.setIcon(icon_116eb31c3d588e6a54a77b0d87636777);
+            
+    
+            var marker_6e147a09c4f0270629526930d44eca0f = L.marker(
+                [49.8413549, 8.3765091],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_2c4683f232640b679c4547aa22d56a2c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4aa649f0ea93a492c07df9e7f6a175b6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_10bd1b5fbca82cd328ec532fcb25515f = $(`<div id="html_10bd1b5fbca82cd328ec532fcb25515f" style="width: 100.0%; height: 100.0%;"><b>Oppenheim</b><br><small>Flugplatz Oppenheim, An den langen Äckern, Krämereck Ost, Oppenheim-Süd, Oppenheim, Rhein-Selz, Landkreis Mainz-Bingen, Rheinland-Pfalz, 55276, Deutschland</small></div>`)[0];
+                popup_4aa649f0ea93a492c07df9e7f6a175b6.setContent(html_10bd1b5fbca82cd328ec532fcb25515f);
+            
+        
+
+        marker_6e147a09c4f0270629526930d44eca0f.bindPopup(popup_4aa649f0ea93a492c07df9e7f6a175b6)
+        ;
+
+        
+    
+    
+            marker_6e147a09c4f0270629526930d44eca0f.bindTooltip(
+                `<div>
+                     Oppenheim
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6e147a09c4f0270629526930d44eca0f.setIcon(icon_2c4683f232640b679c4547aa22d56a2c);
+            
+    
+            var marker_c3fee98c71d4c56c4b1ad7b4ab9cb805 = L.marker(
+                [53.5069733, 13.9487319],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_14952247144cc6e13c4a7d15b5faf502 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dbbe2f257ef278774585c0bb807fbcfa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_527e9e9987c5c687560d0a1f6cf99260 = $(`<div id="html_527e9e9987c5c687560d0a1f6cf99260" style="width: 100.0%; height: 100.0%;"><b>Pasewalk - Franzfelde</b><br><small>Flugplatz Pasewalk, 29, Franzfelde, Pasewalk, Vorpommern-Greifswald, Mecklenburg-Vorpommern, 17309, Deutschland</small></div>`)[0];
+                popup_dbbe2f257ef278774585c0bb807fbcfa.setContent(html_527e9e9987c5c687560d0a1f6cf99260);
+            
+        
+
+        marker_c3fee98c71d4c56c4b1ad7b4ab9cb805.bindPopup(popup_dbbe2f257ef278774585c0bb807fbcfa)
+        ;
+
+        
+    
+    
+            marker_c3fee98c71d4c56c4b1ad7b4ab9cb805.bindTooltip(
+                `<div>
+                     Pasewalk - Franzfelde
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c3fee98c71d4c56c4b1ad7b4ab9cb805.setIcon(icon_14952247144cc6e13c4a7d15b5faf502);
+            
+    
+            var marker_5571c268a7a37ef1c2d7857b71917789 = L.marker(
+                [49.7622365, 11.5728192],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_b3010aab2bc51c803767356643c14db6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_24c345d6e9489579a09c1ee1ca06fc7c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4c709ea349cef0a784bd18028064059f = $(`<div id="html_4c709ea349cef0a784bd18028064059f" style="width: 100.0%; height: 100.0%;"><b>Pegnitz - Zipser Berg</b><br><small>Flugplatz Pegnitz-Zipser Berg, St 2403, Weidmannshöhe, Neuhof, Pegnitz, Landkreis Bayreuth, Bayern, 91257, Deutschland</small></div>`)[0];
+                popup_24c345d6e9489579a09c1ee1ca06fc7c.setContent(html_4c709ea349cef0a784bd18028064059f);
+            
+        
+
+        marker_5571c268a7a37ef1c2d7857b71917789.bindPopup(popup_24c345d6e9489579a09c1ee1ca06fc7c)
+        ;
+
+        
+    
+    
+            marker_5571c268a7a37ef1c2d7857b71917789.bindTooltip(
+                `<div>
+                     Pegnitz - Zipser Berg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5571c268a7a37ef1c2d7857b71917789.setIcon(icon_b3010aab2bc51c803767356643c14db6);
+            
+    
+            var marker_bce9e56b595f17dc265f3c4cea4156e1 = L.marker(
+                [47.9122612, 9.2511854],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_e78a6aded9c4b5ec967b54550cbc8218 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2a08434867a3d5d2eaf01b918e69bb09 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c1966c049a1d2d66df50016f50aea1b1 = $(`<div id="html_c1966c049a1d2d66df50016f50aea1b1" style="width: 100.0%; height: 100.0%;"><b>Pfullendorf</b><br><small>Turm Flugplatz Pfullendorf [C], K 8269, Aftholderberg, Egg, Pfullendorf-Stadt, Aftholderberg, Pfullendorf, VVG der Stadt Pfullendorf, Landkreis Sigmaringen, Baden-Württemberg, 88634, Deutschland</small></div>`)[0];
+                popup_2a08434867a3d5d2eaf01b918e69bb09.setContent(html_c1966c049a1d2d66df50016f50aea1b1);
+            
+        
+
+        marker_bce9e56b595f17dc265f3c4cea4156e1.bindPopup(popup_2a08434867a3d5d2eaf01b918e69bb09)
+        ;
+
+        
+    
+    
+            marker_bce9e56b595f17dc265f3c4cea4156e1.bindTooltip(
+                `<div>
+                     Pfullendorf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bce9e56b595f17dc265f3c4cea4156e1.setIcon(icon_e78a6aded9c4b5ec967b54550cbc8218);
+            
+    
+            var marker_47e011ed1440b76a6e7dab259ba1174a = L.marker(
+                [56.4355428, 10.0425957],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_ba864fff61d0ea5d3399edf62a292eb3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9338feb64bd285fc2299ec7565f64628 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_103d65322764dd268899151d426851ab = $(`<div id="html_103d65322764dd268899151d426851ab" style="width: 100.0%; height: 100.0%;"><b>Randers (DK)</b><br><small>Randers SV, Randers, Randers Kommune, Region Midtjylland, 8940, Danmark</small></div>`)[0];
+                popup_9338feb64bd285fc2299ec7565f64628.setContent(html_103d65322764dd268899151d426851ab);
+            
+        
+
+        marker_47e011ed1440b76a6e7dab259ba1174a.bindPopup(popup_9338feb64bd285fc2299ec7565f64628)
+        ;
+
+        
+    
+    
+            marker_47e011ed1440b76a6e7dab259ba1174a.bindTooltip(
+                `<div>
+                     Randers (DK)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_47e011ed1440b76a6e7dab259ba1174a.setIcon(icon_ba864fff61d0ea5d3399edf62a292eb3);
+            
+    
+            var marker_6c804f6e9802443f0f1eb31a06ff20a5 = L.marker(
+                [49.1418865, 12.0824955],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_aa7123d2f75fdc03c143aa19ffb93164 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_96e75eb270062c5775d152520be4fb37 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5d5296692bdd604dd6d9abd4ce968527 = $(`<div id="html_5d5296692bdd604dd6d9abd4ce968527" style="width: 100.0%; height: 100.0%;"><b>Regensburg - Oberhub</b><br><small>Flugplatz Regensburg-Oberhub, 12, Oberhub, Eichelberg, Regenstauf, Landkreis Regensburg, Bayern, 93128, Deutschland</small></div>`)[0];
+                popup_96e75eb270062c5775d152520be4fb37.setContent(html_5d5296692bdd604dd6d9abd4ce968527);
+            
+        
+
+        marker_6c804f6e9802443f0f1eb31a06ff20a5.bindPopup(popup_96e75eb270062c5775d152520be4fb37)
+        ;
+
+        
+    
+    
+            marker_6c804f6e9802443f0f1eb31a06ff20a5.bindTooltip(
+                `<div>
+                     Regensburg - Oberhub
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6c804f6e9802443f0f1eb31a06ff20a5.setIcon(icon_aa7123d2f75fdc03c143aa19ffb93164);
+            
+    
+            var marker_5585d80f5178570f9df019e285dd690e = L.marker(
+                [51.9004502, 13.1981486],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_b95b69e434f53cf479e208caee7aa6ca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2732803f1352e9c751a22db8a959f75 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d73a04aec533419c071d1b92ba69547 = $(`<div id="html_4d73a04aec533419c071d1b92ba69547" style="width: 100.0%; height: 100.0%;"><b>Reinsdorf</b><br><small>Flugplatz Reinsdorf, Reinsdorf - Hohenkuhnsdorfer Weg, Reinsdorf, Niederer Fläming, Dahme/Mark, Teltow-Fläming, Brandenburg, 14913, Deutschland</small></div>`)[0];
+                popup_c2732803f1352e9c751a22db8a959f75.setContent(html_4d73a04aec533419c071d1b92ba69547);
+            
+        
+
+        marker_5585d80f5178570f9df019e285dd690e.bindPopup(popup_c2732803f1352e9c751a22db8a959f75)
+        ;
+
+        
+    
+    
+            marker_5585d80f5178570f9df019e285dd690e.bindTooltip(
+                `<div>
+                     Reinsdorf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5585d80f5178570f9df019e285dd690e.setIcon(icon_b95b69e434f53cf479e208caee7aa6ca);
+            
+    
+            var marker_433dc69cf8db7c8b11cb04b2a14d860a = L.marker(
+                [50.8506776, 9.5585536],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_4e3416e110ba934ee18df7f54ea8d374 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_963d1773aceb3347ecbb0eca9ccd381a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ea2d3f5457cfa10d085414221e2c68d = $(`<div id="html_5ea2d3f5457cfa10d085414221e2c68d" style="width: 100.0%; height: 100.0%;"><b>Ried - Kirchheim</b><br><small>Riedweg, Kirchheim, Heddersdorf, Kirchheim, Landkreis Hersfeld-Rotenburg, Hessen, 36275, Deutschland</small></div>`)[0];
+                popup_963d1773aceb3347ecbb0eca9ccd381a.setContent(html_5ea2d3f5457cfa10d085414221e2c68d);
+            
+        
+
+        marker_433dc69cf8db7c8b11cb04b2a14d860a.bindPopup(popup_963d1773aceb3347ecbb0eca9ccd381a)
+        ;
+
+        
+    
+    
+            marker_433dc69cf8db7c8b11cb04b2a14d860a.bindTooltip(
+                `<div>
+                     Ried - Kirchheim
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_433dc69cf8db7c8b11cb04b2a14d860a.setIcon(icon_4e3416e110ba934ee18df7f54ea8d374);
+            
+    
+            var marker_82271ac00143b621dfd0296e7760d3a0 = L.marker(
+                [52.1754143, 9.0544709],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_7e3752efc3d53454b8852fad97213b7f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_99094a97e2890f8e337f55e682a8cc18 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b6cdaaf247d0446d99099e1064d19723 = $(`<div id="html_b6cdaaf247d0446d99099e1064d19723" style="width: 100.0%; height: 100.0%;"><b>Rinteln</b><br><small>Flugplatz Rinteln, Zum Flugplatz, Industriegebiet Rinteln-Süd, Rinteln, Landkreis Schaumburg, Niedersachsen, 31737, Deutschland</small></div>`)[0];
+                popup_99094a97e2890f8e337f55e682a8cc18.setContent(html_b6cdaaf247d0446d99099e1064d19723);
+            
+        
+
+        marker_82271ac00143b621dfd0296e7760d3a0.bindPopup(popup_99094a97e2890f8e337f55e682a8cc18)
+        ;
+
+        
+    
+    
+            marker_82271ac00143b621dfd0296e7760d3a0.bindTooltip(
+                `<div>
+                     Rinteln
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_82271ac00143b621dfd0296e7760d3a0.setIcon(icon_7e3752efc3d53454b8852fad97213b7f);
+            
+    
+            var marker_a70f124f812a83728eeccb35a019491e = L.marker(
+                [53.129717, 9.3513785],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_bd9ae3c59a98ba5ee4eb97de7b0290d9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_36c15e4be475cf1ad3f4938e7652022c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5b65d790eac634824885fef7115f3804 = $(`<div id="html_5b65d790eac634824885fef7115f3804" style="width: 100.0%; height: 100.0%;"><b>Rotenburg - Wümme</b><br><small>Flugplatz Rotenburg, Zum Flugplatz, Domäne Luhne, Rotenburg, Landkreis Rotenburg (Wümme), Niedersachsen, 27356, Deutschland</small></div>`)[0];
+                popup_36c15e4be475cf1ad3f4938e7652022c.setContent(html_5b65d790eac634824885fef7115f3804);
+            
+        
+
+        marker_a70f124f812a83728eeccb35a019491e.bindPopup(popup_36c15e4be475cf1ad3f4938e7652022c)
+        ;
+
+        
+    
+    
+            marker_a70f124f812a83728eeccb35a019491e.bindTooltip(
+                `<div>
+                     Rotenburg - Wümme
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a70f124f812a83728eeccb35a019491e.setIcon(icon_bd9ae3c59a98ba5ee4eb97de7b0290d9);
+            
+    
+            var marker_40b950bda329cf193d64ca51c45521c3 = L.marker(
+                [54.4254149, 9.5419074],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_33b21ff9f3ef6a180178607452f967a3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0bf630fb43bd9cf130986f14c698684b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_40d14a7ebbd5cdacb84b0f28af2b82fa = $(`<div id="html_40d14a7ebbd5cdacb84b0f28af2b82fa" style="width: 100.0%; height: 100.0%;"><b>Schleswig - Kropp</b><br><small>Flugplatz Schleswig-Kropp, Hochmoor, Kropp, Kropp-Stapelholm, Kreis Schleswig-Flensburg, Schleswig-Holstein, 24848, Deutschland</small></div>`)[0];
+                popup_0bf630fb43bd9cf130986f14c698684b.setContent(html_40d14a7ebbd5cdacb84b0f28af2b82fa);
+            
+        
+
+        marker_40b950bda329cf193d64ca51c45521c3.bindPopup(popup_0bf630fb43bd9cf130986f14c698684b)
+        ;
+
+        
+    
+    
+            marker_40b950bda329cf193d64ca51c45521c3.bindTooltip(
+                `<div>
+                     Schleswig - Kropp
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_40b950bda329cf193d64ca51c45521c3.setIcon(icon_33b21ff9f3ef6a180178607452f967a3);
+            
+    
+            var marker_2f99641ab691c27dd4508b19a185be6b = L.marker(
+                [52.2061059, 13.1565882],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_c79e461ffa950cfdb651c54ef9760b8d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_044ac516791db46b918913d9199fa3e0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7cacc6c8a64a56db56ccfec49525e44a = $(`<div id="html_7cacc6c8a64a56db56ccfec49525e44a" style="width: 100.0%; height: 100.0%;"><b>Schönhagen</b><br><small>Flugplatz Schönhagen, Zum Flugplatz, Schönhagen, Trebbin, Teltow-Fläming, Brandenburg, 14959, Deutschland</small></div>`)[0];
+                popup_044ac516791db46b918913d9199fa3e0.setContent(html_7cacc6c8a64a56db56ccfec49525e44a);
+            
+        
+
+        marker_2f99641ab691c27dd4508b19a185be6b.bindPopup(popup_044ac516791db46b918913d9199fa3e0)
+        ;
+
+        
+    
+    
+            marker_2f99641ab691c27dd4508b19a185be6b.bindTooltip(
+                `<div>
+                     Schönhagen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2f99641ab691c27dd4508b19a185be6b.setIcon(icon_c79e461ffa950cfdb651c54ef9760b8d);
+            
+    
+            var marker_677aa7f5611912871afd630269eaeee4 = L.marker(
+                [52.5866911, 13.9156327],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_4a20373acd8d35bd9cf258aca77ac79b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_55fb85a198c88a91257a776aff2107f6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ab830686ef8f537fb49148de465d16e1 = $(`<div id="html_ab830686ef8f537fb49148de465d16e1" style="width: 100.0%; height: 100.0%;"><b>Strausberg</b><br><small>Jabiru Motors Deutschland GmbH, 10, Flugplatzstraße F2, Gewerbegebiet Strausberg, Strausberg Nord, Strausberg, Märkisch-Oderland, Brandenburg, 15344, Deutschland</small></div>`)[0];
+                popup_55fb85a198c88a91257a776aff2107f6.setContent(html_ab830686ef8f537fb49148de465d16e1);
+            
+        
+
+        marker_677aa7f5611912871afd630269eaeee4.bindPopup(popup_55fb85a198c88a91257a776aff2107f6)
+        ;
+
+        
+    
+    
+            marker_677aa7f5611912871afd630269eaeee4.bindTooltip(
+                `<div>
+                     Strausberg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_677aa7f5611912871afd630269eaeee4.setIcon(icon_4a20373acd8d35bd9cf258aca77ac79b);
+            
+    
+            var marker_40c7e8284322561407bd527b844c1ab5 = L.marker(
+                [50.6301639, 10.7462945],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_94de10d110f7139b5e9772d9639254a6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0f8f525aee57fcf6cd7b4b06bc5573f8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b64f5847800ffad9f86fae9f40142b2f = $(`<div id="html_b64f5847800ffad9f86fae9f40142b2f" style="width: 100.0%; height: 100.0%;"><b>Suhl Goldlauter</b><br><small>Goldlauter, Suhl, Thüringen, 98528, Deutschland</small></div>`)[0];
+                popup_0f8f525aee57fcf6cd7b4b06bc5573f8.setContent(html_b64f5847800ffad9f86fae9f40142b2f);
+            
+        
+
+        marker_40c7e8284322561407bd527b844c1ab5.bindPopup(popup_0f8f525aee57fcf6cd7b4b06bc5573f8)
+        ;
+
+        
+    
+    
+            marker_40c7e8284322561407bd527b844c1ab5.bindTooltip(
+                `<div>
+                     Suhl Goldlauter
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_40c7e8284322561407bd527b844c1ab5.setIcon(icon_94de10d110f7139b5e9772d9639254a6);
+            
+    
+            var marker_cf2693df5e09f403f04e9ffd29904432 = L.marker(
+                [49.9677882, 7.11167],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_25b47d3a7205b96c3df06dfa0275b7fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f62584db8aec57ce273f876612aac1b5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0eeda0d925f0b1be6d5e9df00d8698b9 = $(`<div id="html_0eeda0d925f0b1be6d5e9df00d8698b9" style="width: 100.0%; height: 100.0%;"><b>Traben - Trarbach</b><br><small>Flugplatz Traben-Trarbach / Mont Royal, K 64, Rißbach, Traben, Wolf, Traben-Trarbach, Landkreis Bernkastel-Wittlich, Rheinland-Pfalz, 56841, Deutschland</small></div>`)[0];
+                popup_f62584db8aec57ce273f876612aac1b5.setContent(html_0eeda0d925f0b1be6d5e9df00d8698b9);
+            
+        
+
+        marker_cf2693df5e09f403f04e9ffd29904432.bindPopup(popup_f62584db8aec57ce273f876612aac1b5)
+        ;
+
+        
+    
+    
+            marker_cf2693df5e09f403f04e9ffd29904432.bindTooltip(
+                `<div>
+                     Traben - Trarbach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cf2693df5e09f403f04e9ffd29904432.setIcon(icon_25b47d3a7205b96c3df06dfa0275b7fc);
+            
+    
+            var marker_03664d889a871d8a69f197305753c574 = L.marker(
+                [48.9912773, 10.8916754],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_c9b346e96c8bcf7246324395f7d3c67a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6088e38d060e91e54843190d9f4ed323 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4068ab2fb8d076478cdb121106684906 = $(`<div id="html_4068ab2fb8d076478cdb121106684906" style="width: 100.0%; height: 100.0%;"><b>Treuchtlingen - Bubenheim</b><br><small>Bubenheim, Treuchtlingen, Landkreis Weißenburg-Gunzenhausen, Bayern, 91757, Deutschland</small></div>`)[0];
+                popup_6088e38d060e91e54843190d9f4ed323.setContent(html_4068ab2fb8d076478cdb121106684906);
+            
+        
+
+        marker_03664d889a871d8a69f197305753c574.bindPopup(popup_6088e38d060e91e54843190d9f4ed323)
+        ;
+
+        
+    
+    
+            marker_03664d889a871d8a69f197305753c574.bindTooltip(
+                `<div>
+                     Treuchtlingen - Bubenheim
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_03664d889a871d8a69f197305753c574.setIcon(icon_c9b346e96c8bcf7246324395f7d3c67a);
+            
+    
+            var marker_d41549d417401ff19baa67ff5ca42ce0 = L.marker(
+                [52.9834312, 10.4657103],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_78302c1cfcd2801a66a2a84230a3939b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7c9017e019d36eb9c1a9525f97df9379 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ad32054b5e4da919fa6165765d55661b = $(`<div id="html_ad32054b5e4da919fa6165765d55661b" style="width: 100.0%; height: 100.0%;"><b>Uelzen</b><br><small>Flugplatz Uelzen, Stadtweg, Bohlsen, Gerdau, Samtgemeinde Suderburg, Landkreis Uelzen, Niedersachsen, 29581, Deutschland</small></div>`)[0];
+                popup_7c9017e019d36eb9c1a9525f97df9379.setContent(html_ad32054b5e4da919fa6165765d55661b);
+            
+        
+
+        marker_d41549d417401ff19baa67ff5ca42ce0.bindPopup(popup_7c9017e019d36eb9c1a9525f97df9379)
+        ;
+
+        
+    
+    
+            marker_d41549d417401ff19baa67ff5ca42ce0.bindTooltip(
+                `<div>
+                     Uelzen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d41549d417401ff19baa67ff5ca42ce0.setIcon(icon_78302c1cfcd2801a66a2a84230a3939b);
+            
+    
+            var marker_9a377da3cf3e5ab9094258fc4530010a = L.marker(
+                [51.5755577, 14.1369438],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_883222391a64cbdb8c416734b40df42f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_55a10e07a60f3379e643cf599b150785 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4fe5f09fb46ac9303ca54d7ab0b5d659 = $(`<div id="html_4fe5f09fb46ac9303ca54d7ab0b5d659" style="width: 100.0%; height: 100.0%;"><b>Welzow</b><br><small>Flugplatz Spremberg-Welzow, Lindenfeld, Bahnsdorf, Neu-Seeland, Bahnsdorf - Bobošojce, Altdöbern, Oberspreewald-Lausitz - Górne Błota-Łužyca, Brandenburg, 03103, Deutschland</small></div>`)[0];
+                popup_55a10e07a60f3379e643cf599b150785.setContent(html_4fe5f09fb46ac9303ca54d7ab0b5d659);
+            
+        
+
+        marker_9a377da3cf3e5ab9094258fc4530010a.bindPopup(popup_55a10e07a60f3379e643cf599b150785)
+        ;
+
+        
+    
+    
+            marker_9a377da3cf3e5ab9094258fc4530010a.bindTooltip(
+                `<div>
+                     Welzow
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9a377da3cf3e5ab9094258fc4530010a.setIcon(icon_883222391a64cbdb8c416734b40df42f);
+            
+    
+            var marker_11fd7831e6afba57c9762ec0d491fa17 = L.marker(
+                [53.0539709, 9.2086875],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_8d0fdc6fe6258fb03c1be32d05cb4dca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b2357b5ee820a6d9482688627eb75c32 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b4d1b23756f1f69304af654be5283e52 = $(`<div id="html_b4d1b23756f1f69304af654be5283e52" style="width: 100.0%; height: 100.0%;"><b>Weser - Wümme</b><br><small>Weser-Wümme, 4, Stelle, Hellwege, Samtgemeinde Sottrum, Landkreis Rotenburg (Wümme), Niedersachsen, 27367, Deutschland</small></div>`)[0];
+                popup_b2357b5ee820a6d9482688627eb75c32.setContent(html_b4d1b23756f1f69304af654be5283e52);
+            
+        
+
+        marker_11fd7831e6afba57c9762ec0d491fa17.bindPopup(popup_b2357b5ee820a6d9482688627eb75c32)
+        ;
+
+        
+    
+    
+            marker_11fd7831e6afba57c9762ec0d491fa17.bindTooltip(
+                `<div>
+                     Weser - Wümme
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_11fd7831e6afba57c9762ec0d491fa17.setIcon(icon_8d0fdc6fe6258fb03c1be32d05cb4dca);
+            
+    
+            var marker_b5ac02399876b8dde5e101681cc83313 = L.marker(
+                [47.8437044, 16.2596186],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_611166bf0d6da4d0d7a77d3178b25dcc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f30913e699755e8cccdb06cde3c2d9e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1af819eb8ab2d41cc95c5e1e3f5316f0 = $(`<div id="html_1af819eb8ab2d41cc95c5e1e3f5316f0" style="width: 100.0%; height: 100.0%;"><b>Wiener - Neustadt Ost (AT)</b><br><small>Flugplatz Wiener Neustadt Ost, B21b, Katastralgemeinde Theresienfeld, Theresienfeld, Bezirk Wiener Neustadt, Niederösterreich, 2604, Österreich</small></div>`)[0];
+                popup_7f30913e699755e8cccdb06cde3c2d9e.setContent(html_1af819eb8ab2d41cc95c5e1e3f5316f0);
+            
+        
+
+        marker_b5ac02399876b8dde5e101681cc83313.bindPopup(popup_7f30913e699755e8cccdb06cde3c2d9e)
+        ;
+
+        
+    
+    
+            marker_b5ac02399876b8dde5e101681cc83313.bindTooltip(
+                `<div>
+                     Wiener - Neustadt Ost (AT)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b5ac02399876b8dde5e101681cc83313.setIcon(icon_611166bf0d6da4d0d7a77d3178b25dcc);
+            
+    
+            var marker_d9b8cac2cc225e93a882b6705f2ebc42 = L.marker(
+                [50.7011414, 12.4530211],
+                {
+}
+            ).addTo(map_6be119e528c962160707b1ca6ca1ce61);
+        
+    
+            var icon_c06d3a61f8958dc2664f112572f423d2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_13dc961721608784867cee4d75fee229 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2d86013283456f7ca581b505bdb2f3af = $(`<div id="html_2d86013283456f7ca581b505bdb2f3af" style="width: 100.0%; height: 100.0%;"><b>Zwickau</b><br><small>Flugplatz Zwickau, Allendestraße, Neuplanitz, Zwickau-Süd, Zwickau, Langenweißbach, Zwickau, Sachsen, 08134, Deutschland</small></div>`)[0];
+                popup_13dc961721608784867cee4d75fee229.setContent(html_2d86013283456f7ca581b505bdb2f3af);
+            
+        
+
+        marker_d9b8cac2cc225e93a882b6705f2ebc42.bindPopup(popup_13dc961721608784867cee4d75fee229)
+        ;
+
+        
+    
+    
+            marker_d9b8cac2cc225e93a882b6705f2ebc42.bindTooltip(
+                `<div>
+                     Zwickau
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d9b8cac2cc225e93a882b6705f2ebc42.setIcon(icon_c06d3a61f8958dc2664f112572f423d2);
+            
+</script>
+</html>
