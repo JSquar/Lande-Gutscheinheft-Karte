@@ -14,7 +14,7 @@ from geopy.geocoders import Nominatim
 
 LISTE_DATEI = Path(__file__).parent / "flugplatzliste_2026.txt"
 CACHE_DATEI = Path(__file__).parent / "geocode_cache.json"
-AUSGABE_KARTE = Path(__file__).parent / "flugplaetze_karte.html"
+AUSGABE_KARTE = Path(__file__).parent / "dist" / "flugplaetze_karte.html"
 
 # Länderkürzel aus der Liste → Länderbezeichnung für bessere Geocoding-Ergebnisse
 LAENDER_KUERZEL = {
@@ -112,6 +112,7 @@ def erstelle_karte(flugplaetze: list[dict]) -> None:
             icon=folium.Icon(color="blue", icon="plane", prefix="fa"),
         ).add_to(karte)
 
+    AUSGABE_KARTE.parent.mkdir(parents=True, exist_ok=True)
     karte.save(AUSGABE_KARTE)
 
 
