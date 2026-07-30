@@ -1,10 +1,11 @@
 """
-Visualisiert Flugplätze aus flugplatzliste.txt auf einer interaktiven Karte.
+Visualisiert Flugplätze aus flugplatzliste_YYYY.txt auf einer interaktiven Karte.
+Alle gefundenen Jahresdateien werden als separate Layer eingebunden.
 Benötigt: pip install folium geopy
 """
 
+import datetime
 import json
-import os
 import time
 from pathlib import Path
 
@@ -12,9 +13,11 @@ import folium
 from geopy.exc import GeocoderServiceError, GeocoderTimedOut
 from geopy.geocoders import Nominatim
 
-LISTE_DATEI = Path(__file__).parent / "flugplatzliste_2026.txt"
-CACHE_DATEI = Path(__file__).parent / "geocode_cache.json"
-AUSGABE_KARTE = Path(__file__).parent / "dist" / "index.html"
+VERZEICHNIS = Path(__file__).parent
+FLUGPLATZ_LISTEN_DIR = VERZEICHNIS / "data"
+CACHE_DATEI = VERZEICHNIS / "geocode_cache.json"
+AUSGABE_KARTE = VERZEICHNIS / "dist" / "index.html"
+AKTUELLES_JAHR = datetime.date.today().year
 
 # Länderkürzel aus der Liste → Länderbezeichnung für bessere Geocoding-Ergebnisse
 LAENDER_KUERZEL = {
@@ -121,11 +124,32 @@ def geocodiere(geolocator: Nominatim, cache: dict, anzeige: str, suchname: str):
     return None
 
 
-def erstelle_karte(flugplaetze: list[dict]) -> None:
-    """Erstellt eine Folium-Karte mit allen gefundenen Flugplätzen."""
-    gefundene = [f for f in flugplaetze if f["coords"]]
-    lats = [f["coords"]["lat"] for f in gefundene]
-    lons = [f["coords"]["lon"] for f in gefundene]
+def finde_jahresdateien() -> dict[int, Path]:
+    """Gibt {Jahr: Path} zurück, sortiert nach Jahr aufsteigend."""
+    result = {}
+    for p in sorted(FLUGPLATZ_LISTEN_DIR.glob("flugplatzliste_*.txt")):
+        try:
+            jahr = int(p.stem.rsplit("_", 1)[-1])
+            result[jahr] = p
+        except ValueError:
+            pass
+    return result
+
+
+def erstelle_karte(jahre_daten: dict[int, list[dict]]) -> None:
+    """Erstellt eine Folium-Karte mit einem Layer pro Jahr.
+
+    Das aktuelle Jahr ist standardmäßig eingeblendet, ältere Jahre ausgeblendet.
+    """
+    alle_coords = [
+        fp["coords"] for fps in jahre_daten.values() for fp in fps if fp["coords"]
+    ]
+    if not alle_coords:
+        print("Keine Koordinaten gefunden – Karte wird nicht erstellt.")
+        return
+
+    lats = [c["lat"] for c in alle_coords]
+    lons = [c["lon"] for c in alle_coords]
 
     karte = folium.Map(
         location=[sum(lats) / len(lats), sum(lons) / len(lons)],
@@ -133,69 +157,76 @@ def erstelle_karte(flugplaetze: list[dict]) -> None:
         tiles="OpenStreetMap",
     )
 
-    # folium.TileLayer(
-    #     tiles="https://snapshots.openflightmaps.org/live/2205/tiles/latest/aero/mercator/{z}/{x}/{y}.png",
-    #     attr='© <a href="https://www.openflightmaps.org">openflightmaps</a>',
-    #     name="ICAO (OpenFlightMaps)",
-    #     max_zoom=11,
-    # ).add_to(karte)
+    for jahr, flugplaetze in sorted(jahre_daten.items(), reverse=True):
+        ist_aktuell = jahr == AKTUELLES_JAHR
+        gruppe = folium.FeatureGroup(
+            name=str(jahr),
+            show=ist_aktuell,
+        )
+        gefundene = [f for f in flugplaetze if f["coords"]]
+        farbe = "blue" if ist_aktuell else "gray"
+        for fp in gefundene:
+            folium.Marker(
+                location=[fp["coords"]["lat"], fp["coords"]["lon"]],
+                popup=folium.Popup(
+                    f"<b>{fp['name']}</b><br><small>{fp['coords']['adresse']}</small>",
+                    max_width=300,
+                ),
+                tooltip=f"{fp['name']} ({jahr})",
+                icon=folium.Icon(color=farbe, icon="plane", prefix="fa"),
+            ).add_to(gruppe)
+        gruppe.add_to(karte)
 
-    folium.LayerControl().add_to(karte)
-
-    # Flugzeug-Icon-Cluster wäre schöner, aber ohne Plugin reichen einfache Marker
-    for fp in gefundene:
-        folium.Marker(
-            location=[fp["coords"]["lat"], fp["coords"]["lon"]],
-            popup=folium.Popup(
-                f"<b>{fp['name']}</b><br><small>{fp['coords']['adresse']}</small>",
-                max_width=300,
-            ),
-            tooltip=fp["name"],
-            icon=folium.Icon(color="blue", icon="plane", prefix="fa"),
-        ).add_to(karte)
+    folium.LayerControl(collapsed=False).add_to(karte)
 
     AUSGABE_KARTE.parent.mkdir(parents=True, exist_ok=True)
     karte.save(AUSGABE_KARTE)
 
 
 def main():
-    if not LISTE_DATEI.exists():
-        print(f"Datei nicht gefunden: {LISTE_DATEI}")
+    jahresdateien = finde_jahresdateien()
+    if not jahresdateien:
+        print("Keine Jahresdateien (flugplatzliste_YYYY.txt) gefunden.")
         return
 
-    zeilen = [
-        z.strip()
-        for z in LISTE_DATEI.read_text(encoding="utf-8").splitlines()
-        if z.strip()
-    ]
-    print(f"{len(zeilen)} Flugplätze geladen.")
+    jahre_str = ", ".join(str(j) for j in sorted(jahresdateien))
+    print(f"Gefundene Jahre: {jahre_str}")
 
     cache = lade_cache()
     geolocator = Nominatim(user_agent="aeroport_mapping_v1")
 
-    flugplaetze = []
-    for i, zeile in enumerate(zeilen, 1):
-        anzeige, suchname = parse_flugplatz(zeile)
-        print(f"[{i}/{len(zeilen)}] {anzeige} ...", end=" ")
-        coords = geocodiere(geolocator, cache, anzeige, suchname)
-        if coords:
-            print(f"({coords['lat']:.4f}, {coords['lon']:.4f})")
-        else:
-            print("nicht gefunden")
-        flugplaetze.append({"name": anzeige, "coords": coords})
+    jahre_daten: dict[int, list[dict]] = {}
+    for jahr, datei in sorted(jahresdateien.items()):
+        zeilen = [
+            z.strip()
+            for z in datei.read_text(encoding="utf-8").splitlines()
+            if z.strip()
+        ]
+        print(f"\n── {jahr}: {len(zeilen)} Flugplätze ──")
+        flugplaetze = []
+        for i, zeile in enumerate(zeilen, 1):
+            anzeige, suchname = parse_flugplatz(zeile)
+            print(f"[{i}/{len(zeilen)}] {anzeige} ...", end=" ")
+            coords = geocodiere(geolocator, cache, anzeige, suchname)
+            if coords:
+                print(f"({coords['lat']:.4f}, {coords['lon']:.4f})")
+            else:
+                print("nicht gefunden")
+            flugplaetze.append({"name": anzeige, "coords": coords})
+        jahre_daten[jahr] = flugplaetze
 
     speichere_cache(cache)
 
-    gefunden = sum(1 for f in flugplaetze if f["coords"])
-    nicht_gefunden = [f["name"] for f in flugplaetze if not f["coords"]]
+    for jahr, flugplaetze in jahre_daten.items():
+        gefunden = sum(1 for f in flugplaetze if f["coords"])
+        nicht_gefunden = [f["name"] for f in flugplaetze if not f["coords"]]
+        print(f"\n{jahr}: {gefunden}/{len(flugplaetze)} geocodiert.")
+        if nicht_gefunden:
+            print("  Nicht gefunden:")
+            for name in nicht_gefunden:
+                print(f"    - {name}")
 
-    print(f"\n{gefunden}/{len(flugplaetze)} Flugplätze geocodiert.")
-    if nicht_gefunden:
-        print("Nicht gefunden:")
-        for name in nicht_gefunden:
-            print(f"  - {name}")
-
-    erstelle_karte(flugplaetze)
+    erstelle_karte(jahre_daten)
     print(f"\nKarte gespeichert: {AUSGABE_KARTE}")
 
 
