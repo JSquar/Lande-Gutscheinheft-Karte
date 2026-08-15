@@ -484,7 +484,6 @@
     "lon": 12.1751158,
     "adresse": "Heinz-Peinl-Flugplatz Greiz-Obergrochlitz, Alte Gasse, Schleußengut, Obergrochlitz, Obergrochlitz / Caselwitz, Greiz, Thüringen, 07973, Deutschland"
   },
-  "Hassfurt -Schweinefurt": null,
   "Heide-Büsum": {
     "lat": 54.1531505,
     "lon": 8.9018121,
@@ -555,7 +554,6 @@
     "lon": 14.0060927,
     "adresse": "Niederöblarn, Ennswegerl, Niederöblarn, Öblarn, Politische Expositur Gröbming, Bezirk Liezen, Steiermark, 8960, Österreich"
   },
-  "Nitttenau-Bruck": null,
   "Nordholz-Spieka": {
     "lat": 53.7683587,
     "lon": 8.6417925,
@@ -581,7 +579,6 @@
     "lon": 14.5872069,
     "adresse": "Verkehrslandeplatz Eisenhüttenstadt, Rautenkranzer Weg, Rautenkranz, Rießen, Siehdichum, Schlaubetal, Oder-Spree, Brandenburg, 15890, Deutschland"
   },
-  "Rheine Eschensdorf": null,
   "Ried Kirchheim (AT)": {
     "lat": 48.2122743,
     "lon": 13.345419,
@@ -597,7 +594,6 @@
     "lon": 9.5419074,
     "adresse": "Flugplatz Schleswig-Kropp, Hochmoor, Kropp, Kropp-Stapelholm, Kreis Schleswig-Flensburg, Schleswig-Holstein, 24848, Deutschland"
   },
-  "Schweighofen-Wissembourg": null,
   "Sömmerda-Dermstorf": {
     "lat": 51.1977019,
     "lon": 11.1921112,
@@ -633,7 +629,6 @@
     "lon": 16.2596186,
     "adresse": "Flugplatz Wiener Neustadt Ost, B21b, Katastralgemeinde Theresienfeld, Theresienfeld, Bezirk Wiener Neustadt, Niederösterreich, 2604, Österreich"
   },
-  "Hassfurt-Schweinefurt": null,
   "Hassfurt-Hassberge": {
     "lat": 50.0180576,
     "lon": 10.5272465,
@@ -653,5 +648,75 @@
     "lat": 49.0315476,
     "lon": 7.9902575,
     "adresse": "Sonderlandeplatz Schweighofen, Lerchenweg, Schweighofen, Bad Bergzabern, Landkreis Südliche Weinstraße, Rheinland-Pfalz, 76889, Deutschland"
+  },
+  "Altena-Hegenscheid": {
+    "lat": 51.3126432,
+    "lon": 7.7031048,
+    "adresse": "Flugplatz Altena-Hegenscheid, Hegenscheider Straße, Eileringsen, Iserlohn, Märkischer Kreis, Nordrhein-Westfalen, 58644, Deutschland"
+  },
+  "Ansbach-Petersdorf": {
+    "lat": 49.3596707,
+    "lon": 10.652245,
+    "adresse": "Petersdorf, Weihenzell, Weihenzell (VGem), Landkreis Ansbach, Bayern, 91629, Deutschland"
+  },
+  "Bad Pyrmont-Lügde": {
+    "lat": 51.9723503,
+    "lon": 9.266451,
+    "adresse": "Evangelisch Freikirche Lügde, 28, Lügder Straße, Oesdorf, Löwensen, Bad Pyrmont, Lügde, Landkreis Hameln-Pyrmont, Niedersachsen, 31812, Deutschland"
+  },
+  "Eberswalde-Finow": {
+    "lat": 52.8301312,
+    "lon": 13.7183212,
+    "adresse": "Am Flugplatz, Finow, Eberswalde, Barnim, Brandenburg, 16227, Deutschland"
+  },
+  "Greiz- Obergrochlitz": {
+    "lat": 50.6438899,
+    "lon": 12.1751158,
+    "adresse": "Heinz-Peinl-Flugplatz Greiz-Obergrochlitz, Am Carolinenfeld, Schleußengut, Obergrochlitz, Obergrochlitz / Caselwitz, Greiz, Thüringen, 07973, Deutschland"
+  },
+  "Hoppstädten-Weiersbach": {
+    "lat": 49.6108668,
+    "lon": 7.1864828,
+    "adresse": "Flugplatz Hoppstädten-Weiersbach, Mühlenweg, Weiersbach, Hoppstädten-Weiersbach, Birkenfeld, Landkreis Birkenfeld, Rheinland-Pfalz, 55768, Deutschland"
+  },
+  "Oldenburg-Hatten": {
+    "lat": 53.0685819,
+    "lon": 8.3130527,
+    "adresse": "Flugplatz Oldenburg-Hatten, Hatter Landstraße, Sandtange, Hatten, Landkreis Oldenburg, Niedersachsen, 26209, Deutschland"
+  },
+  "Regensburg-Oberhub": {
+    "lat": 49.1418865,
+    "lon": 12.0824955,
+    "adresse": "Flugplatz Regensburg-Oberhub, 12, Oberhub, Eichelberg, Regenstauf, Landkreis Regensburg, Bayern, 93128, Deutschland"
+  },
+  "Ried-Kirchheim": {
+    "lat": 50.8506776,
+    "lon": 9.5585536,
+    "adresse": "Riedweg, Kirchheim, Heddersdorf, Kirchheim, Landkreis Hersfeld-Rotenburg, Hessen, 36275, Deutschland"
+  },
+  "Rotenburg-Wümme": {
+    "lat": 53.129717,
+    "lon": 9.3513785,
+    "adresse": "Flugplatz Rotenburg, Zum Flugplatz, Domäne Luhne, Rotenburg, Landkreis Rotenburg (Wümme), Niedersachsen, 27356, Deutschland"
+  },
+  "Schleswig-Kropp": {
+    "lat": 54.4254149,
+    "lon": 9.5419074,
+    "adresse": "Flugplatz Schleswig-Kropp, Hochmoor, Kropp, Kropp-Stapelholm, Kreis Schleswig-Flensburg, Schleswig-Holstein, 24848, Deutschland"
+  },
+  "Traben-Trarbach": {
+    "lat": 49.9677882,
+    "lon": 7.11167,
+    "adresse": "Flugplatz Traben-Trarbach / Mont Royal, Kärtelweg, Rißbach, Traben, Wolf, Traben-Trarbach, Landkreis Bernkastel-Wittlich, Rheinland-Pfalz, 56841, Deutschland"
+  },
+  "Treuchtlingen-Bubenheim": {
+    "lat": 48.9912773,
+    "lon": 10.8916754,
+    "adresse": "Bubenheim, Treuchtlingen, Landkreis Weißenburg-Gunzenhausen, Bayern, 91757, Deutschland"
+  },
+  "Wiener-Neustadt Ost (AT)": {
+    "lat": 47.8437044,
+    "lon": 16.2596186,
+    "adresse": "Flugplatz Wiener Neustadt Ost, Wiener Neustädter Straße, Katastralgemeinde Wiener Neustadt, Wiener Neustadt, Niederösterreich, 2700, Österreich"
   }
 }
